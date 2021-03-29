@@ -1,0 +1,266 @@
+*{margin:0;padding:0;}
+li{list-style:none outside none;}
+
+html, body { height: 100%; background: #efefef;}
+
+.table{
+	height: 90%;
+	width: 95%;
+	border: solid;
+	opacity:0.9;
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 5px 10px;
+    background:#efefef;
+}
+ .table td{
+ 	width: 50%;
+ 	border: 2px dotted;
+ 	text-align: center;
+ }
+
+/*模式表格*/
+ .table1{
+ 	height: 100%;
+	/*position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 3px 5px;
+    background:#93dbfb;
+}
+ .table1 tr{
+ 	border-color: #f44336;
+ }
+
+  .table1 td{
+ 	border-color: #264863;
+ }
+ .table1 tr td:first-child{
+			  width:10%;
+ 			  font-size:130%;
+ 			  color:white;
+ 			  border: 1px solid #264863;
+}
+ .table1 tr td:nth-child(2){
+			  width:60%;
+ 			  font-size:50%;
+ 			  color: #585656;
+			  border:1px dashed #264863;
+			  background:#ece7e7;
+ }
+ .table1 tr td:nth-child(3){
+ 		      width:20%;
+			  border:1px dashed #264863;
+			  background:#ece7e7;
+ }
+  input{
+ 		     font-size:25px;
+ }
+ #tdms{
+	border:3px solid #264863;
+}
+
+ #tdms1{
+	 background: #e6b33d;
+}
+
+ #tdms2{
+	 background: #da6931;
+}
+
+ #tdms3{
+	 background: #985054;
+}
+
+/*地图*/
+ #tdgs{
+	border:3px solid #37576f;
+}
+
+
+/*落位表格*/
+ .table4{
+ 	height: 100%;
+/*	position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 20px 20px;
+    background:#fdeb50;
+}
+ .table4 tr{
+ 	border-color: #607d8b;
+ }
+
+  .table4 td{
+ 	border-color: #607d8b;
+ }
+ .table4 tr td:first-child{
+ 			  width:50%;
+ 			  font-size:150%;
+ 			  color:#37576f;
+ 			  border: 2px solid #607d8b;
+ 			  background:#93dbfb;
+}
+ .table4 tr td:nth-child(2){
+ 			  font-size:150%;
+ 			  color:#37576f;
+			  border:2px solid #607d8b;
+			  background:#93dbfb;
+ }
+
+
+ #tdlw{
+	border:3px solid #37576f;
+}
+
+
+ #location{
+ 	width: 30%;
+ 	height: 50%;
+ 	border:2px solid #37576f;
+ 	border-radius: 50%;
+ 	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    margin: auto;
+ 	z-index: 1;
+ 	display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 240%;
+ }
+
+ #reason{
+ 	width: 35%;
+ 	height: 22%;
+ 	border:2px solid #37576f;
+ 	position: absolute;
+ 	left: 10px;
+	bottom: 10px;
+ }
+.layui-textarea {
+    min-height: 100%;
+}
+
+
+/*卡片*/
+ .box{background:#cdd9d9; position: relative;height: 100%; }
+.box-4{
+		position: relative;
+		overflow: hidden;
+		vertical-align: middle;
+}
+
+.dl{
+	width: 50px;
+	height: 64px;
+	background: #cdd9d9;
+	border-radius:0px 5px 0 0;
+	border: 1px solid #ffffff;
+
+	display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+
+    display: -o-box;
+    -o-box-orient: horizontal;
+    -o-box-pack: center;
+    -o-box-align: center;
+
+    display: -ms-box;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+}
+
+p{position:absolute;font-size:50%;text-align:center;color:#232121;}
+
+.object{
+	background: #de6b58;
+}
+
+.pattern{
+	background: #86d5da;
+}
+.pattern>p{
+	font-size:90%;
+	color:#232121;
+}
+
+.content{
+	background: #9d5e62;
+}
+.content>p{
+	font-size:90%;
+	color: white;
+}
+
+.function{
+	background: #d54053;
+}
+.function>p{
+	font-size:90%;
+	color: white;
+}
+
+.location{
+	background: #e6b33d;
+}
+.location>p{
+	font-size:140%;
+	color:#b0362f;
+	font-weight:bold;
+}
+
+.card1{
+	 position: absolute;
+	 border-radius:0px 5px 0 0;
+	 box-shadow: 02px 2px 0 rgba(0, 0, 0, 0.2), 04px 4px 0 rgba(0, 0, 0, 0.19);
+	 width: 50px;
+	 height: 64px;
+}
+
+
+#bu1{
+	float:right;
+	margin-left:3px;
+}
+
+#bu5{
+	float:right;
+	margin-left:3px;
+}
+
+#bu6{
+	float:right;
+	margin-left:3px;
+}
+
+.m_map{width:100%;height:100%;position:relative; background:url(../images/diru.png) no-repeat 0 0 ;background-size:contain;}

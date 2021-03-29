@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/public/vendor/layui-v2.4.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/public/css/member.css">
+</head>
+<body class="bg-grey-lighter h-screen">
+@php
+    $type = request()->get('type', 'login');
+@endphp
+<div class="container h-full flex justify-center items-center">
+     <canvas></canvas>
+    <div class="layui-tab w-1/3" style="position: absolute;" >
+       <!--  @if(session()->has(\App\Http\Controllers\Front\UserController::AUTH_SESSION))
+            <span style="margin-bottom: 20px;" class="text-purple-light block">登录或注册进行帐号关联</span>
+        @endif
+            <span style="margin-bottom: 20px;" class="text-red-light block">
+            @foreach($errors->all() as $message)
+                {{ $message }}
+            @endforeach
+            </span> -->
+     <!--    <ul class="layui-tab-title">
+            <li @if($type === 'login') class="layui-this" @endif>登录</li>
+            <li @if($type === 'register') class="layui-this" @endif>注册</li>
+        </ul> -->   
+        <div class="layui-tab-content">
+                    
+            <div class="layui-tab-item @if($type === 'login') layui-show @endif">
+                <form action="{{ route('member::login') }}" class="w-full max-w-xs" id="login">
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label for="phone" class="block font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                学号
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input class="bg-grey-lighter appearance-none border-2 rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="studentid" name="studentid" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label for="password" class="block font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                密码
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input class="bg-grey-lighter appearance-none border-2 rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="password" name="password" type="password" value="">
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3"></div>
+                        <div class="md:w-2/3">
+                            <button class="layui-btn layui-btn-normal layui-btn-fluid" type="submit" id="submit-login">
+                                登录
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <div class="md:flex md:items-center">
+                        <div class="md:w-1/3"></div>
+                        <div class="md:w-2/3">
+                            <a href="{{ route('member::qq.auth') }}" class="py-2 px-4">QQ</a>
+                            <a href="{{ route('member::wechat.auth') }}" class="py-2 px-4">微信</a>
+                            <a href="{{ route('member::weibo.auth') }}" class="py-2 px-4">微博</a>
+                        </div>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js"></script>
+<script type="text/javascript" src="/public/js/member.js"></script>
+<!-- <script src="/public/js/jquery.min.js"></script> -->
+<script src="/public/js/ban.js"></script>
+<script>
+    $(function () {
+        $('button').click(function () {
+            var form = $('#login');
+            if ($(this).attr('id') === 'submit-register') {
+                form = $('#register');
+            }
+
+            window.form_submit = $(this);
+            form_submit.prop('disabled', true);
+            $.ajax({
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function (result) {
+                    if (result.code !== 0) {
+                        form_submit.prop('disabled', false);
+                        layer.msg(result.msg, {shift: 6});
+                        return false;
+                    }
+                    layer.msg(result.msg, {icon: 1}, function () {
+                        if (result.reload) {
+                            location.reload();
+                        }
+                        if (result.redirect) {
+                            location.href = '{{$url}}';
+                        }
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

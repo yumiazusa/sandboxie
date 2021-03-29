@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="/layui/css/layui.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/drag.js"></script>
+        <script type="text/javascript" src="js/jquery.flip.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+        <title>Laravel</title>
+
+        <!-- Styles -->
+    </head>
+    <body>
+    @php
+        $user = \Auth::guard('member')->user();
+    @endphp
+<div class='box box-4'>
+<table class="layui-table table">
+  <tbody>
+    <tr class="tr">
+      <td id="td1">角色</td>
+      <td>角色<br>卡片</td>
+      <td>正常流程参与角色</td>
+     <!--  <td>共享流程参与角色</td> -->
+    </tr>
+    <tr class="tr">
+      <td id="td2">动作</td>
+      <td>动作<br>卡片</td>
+      <td>正常业务动作</td>
+    <!--   <td>共享业务动作</td> -->
+    </tr>
+    <tr class="tr">
+      <td id="td3">单据</td>
+      <td>单据<br>卡片</td>
+      <td>正常业务单据</td>
+     <!--  <td>共享业务单据</td> -->
+    </tr>
+    <tr class="tr">
+      <td id="td4">技术</td>
+      <td>技术<br>卡片</td>
+      <td>正常业务支持技术</td>
+     <!--  <td>共享业务技术支持</td> -->
+    </tr>
+
+  </tbody>
+</table>
+
+   <!--  <dl><img src="img/05.jpg" width=90 height=110></dl> -->
+    @foreach($data as $k=>$v)
+    <dl class="dl" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}">
+      @if ($data[$k]['shared'] === 3)
+      <div id='card1' class="card2">
+        @else
+       <div id='card1' class="card1">
+        @endif
+      <div class="{{$data[$k]['kind']}}">
+        @switch($data[$k]['kind'])
+        @case('people')
+        <i class="layui-icon">&#xe66f;</i>
+        @break
+        @case('action')
+        <i class="layui-icon">&#xe641;</i>
+        @break
+        @case('list')
+        <i class="layui-icon">&#xe63c;</i>
+        @break
+        @case('tech')
+        <i class="layui-icon">&#xe631;</i>
+        @break
+        @endswitch
+
+      </div>
+      @if ($data[$k]['shared'] === 3)
+      <p id="{{$k}}p">{{$data[$k]['sharename']}}</p>
+      @else
+       <p id="{{$k}}p">{{$data[$k]['name']}}</p>
+       @endif
+       </div>
+      @if($data[$k]['isshare'] === 1 && $data[$k]['shared'] !== 3)
+      <i class="layui-icon i" id="{{$k}}" shared="1" sharename="{{$data[$k]['name']}}" sharedname="{{$data[$k]['sharename']}}">&#xe65b;</i>
+       @endif
+       </dl>
+    @endforeach
+    <!--  <dl class="dl" id="dll" leftno="13.5" topno="9"><div id='card2' class="card1"><div ><i class="layui-icon layui-icon-username"></i></div><p>财务经理</p></div><i class="layui-icon i" id="i6" shared="1">&#xe65b;</i></dl> -->
+
+    <button type="button" class="layui-btn layui-btn-danger layui-btn-sm" id="bu1"><i class="layui-icon">保存&nbsp;&#xe621;</i></button>
+    <button type="button" class="layui-btn layui-btn-sm" id="bu2"><i class="layui-icon">去画流程图&nbsp;&nbsp;&#xe62a;</i></button>
+    <button type="button" class="layui-btn layui-btn-sm" id="bu3"><i class="layui-icon">共享&nbsp;&#xe613;</i></button>
+     <button type="button" class="layui-btn layui-btn-sm" id="bu4"><i class="layui-icon">正常&nbsp;&#xe612;</i></button>
+     <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu5" title="重置" url="{{url('renav')}}"><i class="layui-icon">&#xe669;</i></button>
+     <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu6" title="返回首页"><i class="layui-icon">&#xe68e;</i></button>
+    </div>
+
+<script>
+
+         $(function(){
+            $('.box-4 dl').each(function(){
+                var left = $(this).attr('leftno');
+                var top = $(this).attr('topno');
+                $(this).dragging({
+                    move : 'both',
+                    randomPosition :false,
+                    left : left,
+                    top: top
+                });
+            });
+        });
+
+        //离开保存
+        $('#bu1').click(function(){
+            $('.box-4 dl').each(function(){
+            var offset = $(this).offset();
+            var left = offset.left;
+            var top = offset.top;
+            // alert(top);
+            // alert(left);
+        });
+        });
+        //流程图
+        $('#bu2').click(function(){
+            return confirm("确定");
+        });
+        //共享
+        $('#bu3').click(function(){
+            $("#bu4").css('display','block');
+            $("#bu3").css('display','none');
+            $('table tr').each(function() {
+            var content = $(this).children().eq(2).html();
+            content = content.slice(2);
+   　    　   $(this).append("<td>共享"+content+"</td>");
+            });
+        });
+        //返回正常
+         $('#bu4').click(function(){
+            $("#bu3").css('display','block');
+            $("#bu4").css('display','none');
+            $('table tr').each(function() {
+            $(this).children().eq(3).remove();
+            });
+        });
+        //重置
+        // $('#bu5').click(function(){
+        //     var reurl = $(this).attr('url');
+        //     $.ajax({
+        //     type : "POST",
+        //     contentType: "application/json;charset=UTF-8",
+        //     url : reurl,
+        //     data: serialize()reurl,
+        //     //请求成功
+        //     success : function(result) {
+        //         alert(result);
+        //     },
+        //     //请求失败，包含具体的错误信息
+        //     error : function(e){
+        //         console.log(e.status);
+        //         console.log(e.responseText);
+        //     }
+        // });
+        // });
+
+        //返回首页
+          $('#bu6').click(function(){
+            window.location.replace('{{url('/')}}');
+        });
+
+        //拖动滑块
+        $(function(){
+                $(".i").bind("click",function(){
+                       var sharedno = $(this).attr('shared');
+                       var sharedid = $(this).attr('id');
+                       var sharename = $(this).attr('sharename');
+                       var sharedname = $(this).attr('sharedname');
+                       if(sharedno == 1){
+                        $(this).parent().flip({
+                        direction: 'lr',
+                        speed: '0.5',
+                        // onEnd: function(){$("#dll").css("background","");}
+                        onEnd: function(){
+                            $("#"+sharedid).attr('shared','2');
+                            $("#"+sharedid).html('&#xe65a;');
+                            $("#"+sharedid+"p").html(sharedname);
+                            $("#"+sharedid+"p").parent().attr('class','card2');
+                            }
+                          });
+                         }else if(sharedno == 2){
+                            $(this).parent().flip({
+                        direction: 'rl',
+                        speed: '0.5',
+                        // onEnd: function(){$("#dll").css("background","");}
+                        onEnd: function(){
+                             $("i#"+sharedid).attr('shared','1');
+                             $("i#"+sharedid).html('&#xe65b;');
+                             $("#"+sharedid+"p").html(sharename);
+                             $("#"+sharedid+"p").parent().attr('class','card1');
+                            }
+                          });
+                         }
+                    return false;
+                });
+
+                // $(".revert").bind("click",function(){
+                //     $("#flipbox").revertFlip();
+                //     return false;
+                // });
+
+                // setInterval('alert("Hello");', 3000);
+
+            });
+
+    </script>
+    <script src="/layui/layui.all.js"></script>
+    </body>
+</html>

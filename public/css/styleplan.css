@@ -1,0 +1,351 @@
+*{margin:0;padding:0;}
+li{list-style:none outside none;}
+
+html, body { height: 100%; background: #efefef;}
+
+.table{
+	height: 90%;
+	width: 95%;
+	border: solid;
+	opacity:0.9;
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 5px 10px;
+    background:#efefef;
+}
+ .table td{
+ 	width: 50%;
+ 	border: 2px dotted;
+ 	text-align: center;
+ }
+
+/*集团表格*/
+ .table1{
+ 	height: 100%;
+	/*position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 3px 5px;
+    background:#93dbfb;
+}
+ .table1 tr{
+ 	height: 33%;
+ 	border-color: #f44336;
+ }
+
+  .table1 td{
+ 	width: 25%;
+ 	border-color: #264863;
+ }
+ .table1 tr td:first-child{
+ 			  width:2%;
+ 			  font-size:130%;
+ 			  color:white;
+ 			  border: 1px solid #264863;
+}
+ .table1 tr td:nth-child(2){
+ 			  width:2%;
+ 			  font-size:80%;
+ 			  color: #585656;
+			  border:1px dashed #264863;
+			  background:#ece7e7;
+ }
+ .table1 tr td:nth-child(3){
+			  border:1px dotted #264863;
+			  background:#93dbfb;
+ }
+ #tdjt{
+	border:3px solid #264863;
+}
+
+ #tdjt1{
+	 background: #e6b33d;
+}
+
+ #tdjt2{
+	 background: #da6931;
+}
+
+ #tdjt3{
+	 background: #985054;
+}
+
+/*公司表格*/
+ .table2{
+ 	height: 100%;
+/*	position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 3px 5px;
+    background:#f5a288;
+}
+ .table2 tr{
+ 	height: 33%;
+ 	border-color: #f44336;
+ }
+
+  .table2 td{
+ 	width: 25%;
+ 	border-color: #264863;
+ }
+ .table2 tr td:first-child{
+ 			  width:2%;
+ 			  font-size:130%;
+ 			  color:white;
+ 			  border: 1px solid #f44336;
+}
+ .table2 tr td:nth-child(2){
+ 			  width:2%;
+ 			  font-size:80%;
+ 			  color: #585656;
+			  border:1px dashed #f44336;
+			  background:#ece7e7;
+ }
+ .table2 tr td:nth-child(3){
+			  border:1px dotted #f44336;
+			  background:#f5a288;
+ }
+ #tdgs{
+	border:3px solid #f44336;
+}
+
+ #tdgs1{
+	 background: #e6b33d;
+}
+
+ #tdgs2{
+	 background: #da6931;
+}
+
+ #tdgs3{
+	 background: #985054;
+}
+
+/*共享表格*/
+ .table3{
+ 	height: 100%;
+	/*position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 3px 5px;
+    background:#a2d8a4;
+}
+ .table3 tr{
+ 	height: 33%;
+ 	border-color: #009688;
+ }
+
+  .table3 td{
+ 	width: 25%;
+ 	border-color: #009688;
+ }
+ .table3 tr td:first-child{
+ 			  width:2%;
+ 			  font-size:130%;
+ 			  color:white;
+ 			  border: 1px solid #009688;
+}
+ .table3 tr td:nth-child(2){
+			  border:1px dotted #009688;
+			   background:#a2d8a4;
+ }
+ #tdgx{
+	border:3px solid #009688;
+}
+
+ #tdgx1{
+	 background: #e6b33d;
+}
+
+ #tdgx2{
+	 background: #da6931;
+}
+
+ #tdgx3{
+	 background: #985054;
+}
+
+/*矩阵表格*/
+ .table4{
+ 	height: 100%;
+	/*position: absolute;*/
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: separate;
+    border-spacing: 15px 10px;
+    background:#ffeb3b;
+}
+ .table4 tr{
+ 	border-color: #607d8b;
+ }
+
+  .table4 td{
+ 	border-color: #607d8b;
+ }
+ .table4 tr td:first-child{
+ 			  width:50%;
+ 			  font-size:150%;
+ 			  color:white;
+ 			  border: 2px solid #607d8b;
+}
+ .table4 tr td:nth-child(2){
+ 			  font-size:150%;
+ 			  color:white;
+			  border:2px solid #607d8b;
+ }
+ #tdjz{
+	border:3px solid #607d8b;
+}
+
+ #tdjz1{
+ 	 height: 50%;
+	 background: #93dbfb;
+}
+
+ #tdjz2{
+ 	 height: 50%;
+	 background: #f5a288;
+}
+
+ #tdjz3{
+ 	height: 100%;
+ 	background: #a2d8a4;
+ }
+
+
+/*卡片*/
+ .box{background:#cdd9d9; position: relative;height: 100%; }
+.box-4{
+		position: relative;
+		overflow: hidden;
+		vertical-align: middle;
+}
+
+.dl{
+	width: 50px;
+	height: 64px;
+	background: #cdd9d9;
+	border-radius:0px 5px 0 0;
+	border: 1px solid #ffffff;
+
+	display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+
+    display: -o-box;
+    -o-box-orient: horizontal;
+    -o-box-pack: center;
+    -o-box-align: center;
+
+    display: -ms-box;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+}
+
+p{position:absolute;font-size:50%;text-align:center;color:#232121;}
+
+.position{
+	background:#c15c2a;
+}
+.position>p{
+	font-size:90%;
+	color:white;
+}
+
+.department{
+	background: #e6b33d;
+}
+.department>p{
+	font-size:90%;
+	color:white;
+}
+
+.duty{
+	background: #9d5e62;
+}
+.duty>p{
+	font-size:90%;
+	color: white;
+}
+
+.gsposition{
+	background:#d97442;
+}
+.gsposition>p{
+	font-size:90%;
+	color:black;
+}
+
+.gsdepartment{
+	background: #f7c85a;
+}
+.gsdepartment>p{
+	font-size:90%;
+	color:black;
+}
+
+.gsduty{
+	background: #a76c6f;
+}
+.gsduty>p{
+	font-size:90%;
+	color: black;
+}
+
+.card1{
+	 position: absolute;
+	 border-radius:0px 5px 0 0;
+	 box-shadow: 02px 2px 0 rgba(0, 0, 0, 0.2), 04px 4px 0 rgba(0, 0, 0, 0.19);
+	 width: 50px;
+	 height: 64px;
+}
+
+
+
+#bu1{
+	float:right;
+	margin-left:3px;
+}
+
+
+#bu5{
+	float:right;
+	margin-left:3px;
+}
+
+#bu6{
+	float:right;
+	margin-left:3px;
+}
