@@ -32,6 +32,7 @@
     @endif
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu5" title="重置" url="{{url('renav')}}"><i class="layui-icon">&#xe669;</i></button>
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu6" title="返回首页"><i class="layui-icon">&#xe68e;</i></button>
+     <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu7" title="test"><i class="layui-icon">&#xe68e;</i></button>
 <table class="layui-table table" id="sharetb" sharetb="{{$sharetb['sharetb']}}">
   <tbody>
     <tr class="tr">
@@ -365,6 +366,59 @@
                 // setInterval('alert("Hello");', 3000);
 
             });
+
+         $('#bu7').click(function(){
+          alert('ok');
+        //   var left =new Array;
+        //   var top =new Array;
+        //   var cid =new Array;
+        //   var kind =new Array;
+        //   var name =new Array;
+        //   var isshare =new Array;
+        //   var sharename =new Array;
+        //   var shared =new Array;
+        //   var saveurl = $(this).attr('url');
+        //   var sharetb = $("#sharetb").attr('sharetb');
+        //   var i = 0;
+        //     $('.box-4 dl').each(function(){
+        //     var offset = $(this).offset();
+        //     left[i] = offset.left;
+        //     top[i] = offset.top;
+        //     cid[i] = $(this).attr('cid');
+        //     kind[i] = $(this).attr('kind');
+        //     name[i] = $(this).attr('name');
+        //     isshare[i] = $(this).attr('isshare');
+        //     sharename[i] = $(this).attr('sharename');
+        //     shared[i] = $(this).children("i").attr('shared');
+        //     i++;
+        // });
+        //     $.ajax({
+        //     type : "POST",
+        //     dataType:"json",
+        //     url : saveurl,
+        //     data: {'cid':cid,'kind':kind,'name':name,'isshare':isshare,'sharename':sharename,'top':top,'left':left,'shared':shared,'sharetb':sharetb},
+        //     beforeSend: function(){
+        //           layer.load();
+        //         },
+        //     //请求成功
+        //     success : function(result) {
+        //         layer.close();
+        //         layer.msg(result.msg, {icon: result.code}, function () {
+        //                 if (result.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //     },
+        //     //请求失败，包含具体的错误信息
+        //     error : function(e){
+        //         layer.msg(e.msg, {icon: e.code}, function () {
+        //                 if (e.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //     }
+        // });
+        });
 
     </script>
     <script src="/layui/layui.all.js"></script>

@@ -13,8 +13,8 @@
     $type = request()->get('type', 'login');
 @endphp
 <div class="container h-full flex justify-center items-center">
-     <canvas></canvas>
-    <div class="layui-tab w-1/3" style="position: absolute;" >
+       <canvas></canvas>
+      <div class="layui-tab w-1/3" style="position: absolute;" >
        <!--  @if(session()->has(\App\Http\Controllers\Front\UserController::AUTH_SESSION))
             <span style="margin-bottom: 20px;" class="text-purple-light block">登录或注册进行帐号关联</span>
         @endif
