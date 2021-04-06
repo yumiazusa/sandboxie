@@ -368,6 +368,7 @@
             });
 
          $('#bu7').click(function(){
+          
           alert('ok');
         //   var left =new Array;
         //   var top =new Array;
