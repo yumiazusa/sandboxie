@@ -350,9 +350,6 @@ class HomeController extends BaseController
                 'msg' => '刷新成功',
                 'reload' => true
             ];
-        // dd($user);
-        // $res = DB::table('card1')->where('parent_id',$id)->update($card);
-        // dd($data);
     }
 
     //重置规划卡片
