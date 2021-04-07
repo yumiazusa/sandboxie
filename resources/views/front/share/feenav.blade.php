@@ -225,6 +225,8 @@
           var cid =new Array;
           var kind =new Array;
           var name =new Array;
+          var hightW = window.innerHeight;
+          var widthW = window.innerWidth;
           var isshare =new Array;
           var sharename =new Array;
           var shared =new Array;
@@ -234,8 +236,8 @@
           var i = 0;
             $('.box-4 dl').each(function(){
             var offset = $(this).offset();
-            left[i] = offset.left;
-            top[i] = offset.top;
+            left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
+            top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
             cid[i] = $(this).attr('cid');
             kind[i] = $(this).attr('kind');
             name[i] = $(this).attr('name');
