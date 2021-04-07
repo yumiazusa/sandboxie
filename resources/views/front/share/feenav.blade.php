@@ -71,7 +71,7 @@
   </tbody>
 </table>
 
-    <dl style="width: 5%;height: 10%;background: red;"></dl>
+    <dl><img src="img/05.jpg" width=90 height=10%></dl>
     <!-- @foreach($data as $k=>$v)
     <dl class="dl" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}" isshare="{{$data[$k]['isshare']}}" sharename="{{$data[$k]['sharename']}}">
       @if ($data[$k]['shared'] === 3)
@@ -372,6 +372,16 @@
           var widthW = window.innerWidth;
           alert(hightW);
           alert(widthW);
+          var left =new Array;
+          var top =new Array;
+          var i = 0;
+          $('.box-4 dl').each(function(){
+            var offset = $(this).offset();
+            left[i] = offset.left;
+            top[i] = offset.top;
+            alert(left);
+            alert(top);
+          });
         //   var left =new Array;
         //   var top =new Array;
         //   var cid =new Array;
