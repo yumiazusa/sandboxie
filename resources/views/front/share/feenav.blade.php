@@ -380,7 +380,7 @@
             left[i] = offset.left;
             top[i] = offset.top;
             alert(left);
-            alert(top);
+            alert('ok');
           });
         //   var left =new Array;
         //   var top =new Array;
