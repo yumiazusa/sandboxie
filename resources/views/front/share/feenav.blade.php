@@ -71,8 +71,8 @@
   </tbody>
 </table>
 
-    <dl><img src="img/05.jpg" width=90 height=10%></dl>
-   <!--  @foreach($data as $k=>$v)
+   <!--  <dl><img src="img/05.jpg" width=90 height=10%></dl> -->
+    @foreach($data as $k=>$v)
     <dl class="dl" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}" isshare="{{$data[$k]['isshare']}}" sharename="{{$data[$k]['sharename']}}">
       @if ($data[$k]['shared'] === 3)
       <div class="card2">
@@ -141,7 +141,7 @@
        
 
        </dl>
-      @endforeach -->
+      @endforeach
   
 
     
