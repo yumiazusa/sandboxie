@@ -71,8 +71,8 @@
   </tbody>
 </table>
 
-   <!--  <dl><img src="img/05.jpg" width=90 height=110></dl> -->
-    @foreach($data as $k=>$v)
+    <dl style="width: 5%;height: 10%;background: red;"></dl>
+    <!-- @foreach($data as $k=>$v)
     <dl class="dl" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}" isshare="{{$data[$k]['isshare']}}" sharename="{{$data[$k]['sharename']}}">
       @if ($data[$k]['shared'] === 3)
       <div class="card2">
@@ -142,7 +142,7 @@
 
        </dl>
       @endforeach
-  
+   -->
 
     
     </div>
@@ -368,8 +368,10 @@
             });
 
          $('#bu7').click(function(){
-          
-          alert('ok');
+          var hightW = window.innerHeight;
+          var widthW = window.innerWidth;
+          alert(hightW);
+          alert(widthW);
         //   var left =new Array;
         //   var top =new Array;
         //   var cid =new Array;
