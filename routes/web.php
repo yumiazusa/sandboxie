@@ -52,5 +52,6 @@ Route::group(
         Route::post('restrategy','HomeController@replan')->name('restrategy');
         Route::post('saveplan','HomeController@saveStrategy')->name('saveplan');
         Route::post('replan','HomeController@replan')->name('replan');
+        Route::post('refee','HomeController@reFee')->name('refee');
     }
 );

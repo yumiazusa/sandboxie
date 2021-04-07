@@ -321,6 +321,40 @@ class HomeController extends BaseController
             ];
     }
 
+    public function reFee(){
+        $user = Auth::guard('member')->user();
+        if(!$user){
+             return false;
+        }
+        $data=$this->feeArray();
+        $data=serialize($data);
+        $user=DB::table('card1')->pluck('id');
+        foreach ($user as $k => $v) {
+            $card=[
+            'carddata' => $data,
+            // 'cardposition' => serialize($cardposition),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+         ];
+         $res = DB::table('card1')->where('id',$v)->update($card);
+        }
+        if(!$res){
+            return [
+                'code' => 2,
+                'msg' => '刷新失败',
+                'reload' => true
+            ];
+         }
+         return [
+                'code' => 1,
+                'msg' => '刷新成功',
+                'reload' => true
+            ];
+        // dd($user);
+        // $res = DB::table('card1')->where('parent_id',$id)->update($card);
+        // dd($data);
+    }
+
     //重置规划卡片
     public function replan(Request $request)
     {

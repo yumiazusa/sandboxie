@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
         '/restrategy',
         '/repurchase',
         '/replan',
+        '/refee',
         '/savefee',
         '/savesale',
         '/savestrategy',

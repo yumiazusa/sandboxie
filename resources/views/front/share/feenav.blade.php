@@ -32,6 +32,9 @@
     @endif
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu5" title="重置" url="{{url('renav')}}"><i class="layui-icon">&#xe669;</i></button>
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu6" title="返回首页"><i class="layui-icon">&#xe68e;</i></button>
+     @if ($user->studentid === "20201013")
+     <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu7" title="刷新卡片" url="{{url('refee')}}"><i class="layui-icon">&#xe68e;</i></button>
+     @endif
 <table class="layui-table table" id="sharetb" sharetb="{{$sharetb['sharetb']}}">
   <tbody>
     <tr class="tr">
@@ -370,21 +373,49 @@
 
             });
 
-        //  $('#bu7').click(function(){
-        //   var hightW = window.innerHeight;
-        //   var widthW = window.innerWidth;
-        //   var left =new Array;
-        //   var top =new Array;
-        //   var i = 0;
-        //   $('.box-4 dl').each(function(){
-        //     var offset = $(this).offset();
-        //     left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
-        //     top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
-        //     alert(top);
-        //     alert(left);
-        //     i++;
-        //   });
-        // });
+         $('#bu7').click(function(){
+            var reurl = $(this).attr('url');
+            $.ajax({
+            type : "POST",
+            dataType:"json",
+            url : reurl,
+            data: "username=chen&nickname=alien",
+            beforeSend: function(){
+                  layer.load();
+                },
+            //请求成功
+            success : function(result) {
+                layer.close();
+                layer.msg(result.msg, {icon: result.code}, function () {
+                        if (result.reload) {
+                            location.reload();
+                        }
+                    });
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                layer.msg(e.msg, {icon: e.code}, function () {
+                        if (e.reload) {
+                            location.reload();
+                        }
+                    });
+            }
+        });
+
+          // var hightW = window.innerHeight;
+          // var widthW = window.innerWidth;
+          // var left =new Array;
+          // var top =new Array;
+          // var i = 0;
+          // $('.box-4 dl').each(function(){
+          //   var offset = $(this).offset();
+          //   left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
+          //   top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
+          //   alert(top);
+          //   alert(left);
+          //   i++;
+          // });
+        });
 
     </script>
     <script src="/layui/layui.all.js"></script>
