@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="/layui/css/layui.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/drag.js"></script>
+        <script type="text/javascript" src="js/drag1.js"></script>
         <script type="text/javascript" src="js/jquery.flip.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
@@ -71,8 +71,8 @@
   </tbody>
 </table>
 
-    <dl><img src="img/05.jpg" width=90 height=10%></dl>
-    <!-- @foreach($data as $k=>$v)
+   <!--  <dl><img src="img/05.jpg" width=90 height=10%></dl> -->
+    @foreach($data as $k=>$v)
     <dl class="dl" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}" isshare="{{$data[$k]['isshare']}}" sharename="{{$data[$k]['sharename']}}">
       @if ($data[$k]['shared'] === 3)
       <div class="card2">
@@ -142,7 +142,7 @@
 
        </dl>
       @endforeach
-   -->
+  
 
     
     </div>
@@ -166,6 +166,8 @@
         $('#bu1').click(function(){
           var left =new Array;
           var top =new Array;
+          var hightW = window.innerHeight;
+          var widthW = window.innerWidth;
           var cid =new Array;
           var kind =new Array;
           var name =new Array;
@@ -177,8 +179,8 @@
           var i = 0;
             $('.box-4 dl').each(function(){
             var offset = $(this).offset();
-            left[i] = offset.left;
-            top[i] = offset.top;
+            left[i] = (offset.left / widthW).toFixed(3) *100;
+            top[i] = (offset.top / hightW).toFixed(3) *100;
             cid[i] = $(this).attr('cid');
             kind[i] = $(this).attr('kind');
             name[i] = $(this).attr('name');
@@ -377,10 +379,11 @@
           var i = 0;
           $('.box-4 dl').each(function(){
             var offset = $(this).offset();
-            left[i] = offset.left;
-            top[i] = offset.top;
+            left[i] = (offset.left / widthW).toFixed(3) *100;
+            top[i] = (offset.top / hightW).toFixed(3) *100;
             alert(left);
-            alert('ok');
+            alert(top);
+            i++;
           });
         //   var left =new Array;
         //   var top =new Array;
