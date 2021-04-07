@@ -372,8 +372,6 @@
          $('#bu7').click(function(){
           var hightW = window.innerHeight;
           var widthW = window.innerWidth;
-          alert(hightW);
-          alert(widthW);
           var left =new Array;
           var top =new Array;
           var i = 0;
@@ -381,8 +379,8 @@
             var offset = $(this).offset();
             left[i] = (offset.left / widthW).toFixed(3) *100;
             top[i] = (offset.top / hightW).toFixed(3) *100;
-            alert(left);
             alert(top);
+            alert(left);
             i++;
           });
         //   var left =new Array;
