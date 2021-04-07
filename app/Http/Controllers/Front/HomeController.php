@@ -628,7 +628,7 @@ class HomeController extends BaseController
                 "name"=>"商旅服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 72.15,
+                "top"=> 76.35,
                 "left"=> 13.33,
                 "shared" => 0
             ),
@@ -639,7 +639,7 @@ class HomeController extends BaseController
                 "name"=>"电子发票",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 72.15,
+                "top"=> 76.35,
                 "left"=> 13.53,
                 "shared" => 0
             ),
@@ -650,7 +650,7 @@ class HomeController extends BaseController
                 "name"=>"企业财务系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 72.15,
+                "top"=> 76.35,
                 "left"=> 13.73,
                 "shared" => 0
             ),
@@ -661,7 +661,7 @@ class HomeController extends BaseController
                 "name"=>"影像管理系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 72.15,
+                "top"=> 76.35,
                 "left"=> 13.93,
                 "shared" => 0
             ),
@@ -672,7 +672,7 @@ class HomeController extends BaseController
                 "name"=>"财务共享服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 72.15,
+                 "top"=> 76.35,
                 "left"=> 14.13,
                 "shared" => 0
             ),
@@ -683,7 +683,7 @@ class HomeController extends BaseController
                 "name"=>"银企直联",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 72.15,
+                "top"=> 76.35,
                 "left"=> 14.33,
                 "shared" => 0
             ),
