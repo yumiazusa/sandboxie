@@ -106,6 +106,35 @@
                    本沙盘功能仅供经管院财务共享综合实验教学使用，咨询Email：yumiazusa@hotmail.com
                 </div>
             </div>
+            <script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script> 
+    <script>
+        L2Dwidget.init();
+    </script>
+<script type="text/javascript">
+setTimeout(() => {
+L2Dwidget.init({
+"model": {
+"scale": 1
+},
+"display": {
+"position": "left",
+"width": 200,
+"height": 280,
+"hOffset": 0,
+"vOffset": 0
+},
+"mobile": {
+"show": true,
+"scale": 0.5
+},
+"react": {
+"opacityDefault": 0.7,
+"opacityOnHover": 0.2
+}
+});
+}, 1000)
+</script>
+
         </div>
     </body>
 </html>
