@@ -114,7 +114,7 @@
 setTimeout(() => {
 L2Dwidget.init({
 "model": {
-"scale": 1
+"scale": 0.92
 },
 "display": {
 "position": "left",
