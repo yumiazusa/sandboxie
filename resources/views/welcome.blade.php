@@ -88,11 +88,11 @@
                 <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('strategy',) }}'>共享战略规划</a></th>
                 <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('plan',) }}'>共享组织规划</a></th>
                  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('feenav',) }}'>费用共享</a></th>
-               <!--  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('salenav',) }}'>销售共享</a></th>
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('purchasenav',) }}'>采购共享</a></th> -->
-               <!--  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>费用共享</a></th> -->
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('salenav',) }}'>销售共享</a></th>
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('purchasenav',) }}'>采购共享</a></th>
+               <!--  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>费用共享</a></th>
                 <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>销售共享</a></th>
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>采购共享</a></th>
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>采购共享</a></th> -->
                  </tr>
                 </thead>
                 <tr><td  colspan="6"><a href="{{ route('member::logout') }}">退出登录</a></td></tr>
@@ -107,9 +107,6 @@
                 </div>
             </div>
             <script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script> 
-    <script>
-        L2Dwidget.init();
-    </script>
 <script type="text/javascript">
 setTimeout(() => {
 L2Dwidget.init({

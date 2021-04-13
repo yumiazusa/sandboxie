@@ -326,9 +326,9 @@ class HomeController extends BaseController
         if(!$user){
              return false;
         }
-        $data=$this->feeArray();
+        $data=$this->saleArray();
         $data=serialize($data);
-        $user=DB::table('card1')->pluck('id');
+        $user=DB::table('card2')->pluck('id');
         foreach ($user as $k => $v) {
             $card=[
             'carddata' => $data,
@@ -336,7 +336,7 @@ class HomeController extends BaseController
             // 'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
          ];
-         $res = DB::table('card1')->where('id',$v)->update($card);
+         $res = DB::table('card2')->where('id',$v)->update($card);
         }
         if(!$res){
             return [
@@ -755,8 +755,8 @@ class HomeController extends BaseController
                 "name"=>"销售人员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 179,
+                "top"=> 8.80,
+                "left"=> 13.33,
                 "shared" => 0
             ),
              2 =>array
@@ -766,8 +766,8 @@ class HomeController extends BaseController
                 "name"=>"扫描员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 183,
+                "top"=> 8.80,
+                "left"=> 13.53,
                 "shared" => 0
             ),
             3 =>array
@@ -777,8 +777,8 @@ class HomeController extends BaseController
                 "name"=>"销售经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 185,
+                "top"=> 8.80,
+                "left"=> 13.73,
                 "shared" => 0
             ),
             4 =>array
@@ -788,8 +788,8 @@ class HomeController extends BaseController
                 "name"=>"公司销售会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 187,
+                "top"=> 8.80,
+                "left"=> 13.93,
                 "shared" => 1
             ),
             5 =>array
@@ -799,8 +799,8 @@ class HomeController extends BaseController
                 "name"=>"销售人员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 190,
+                "top"=> 8.80,
+                "left"=> 14.13,
                 "shared" => 0
             ),
             6 =>array
@@ -810,8 +810,8 @@ class HomeController extends BaseController
                 "name"=>"销售经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 192,
+                "top"=> 8.80,
+                "left"=> 14.33,
                 "shared" => 0
             ),
             7 =>array
@@ -821,8 +821,8 @@ class HomeController extends BaseController
                 "name"=>0,
                 "isshare"=> 1,
                 "sharename"=>"FSSC财务审核岗",
-                "top"=> 52.25,
-                "left"=> 193,
+                "top"=> 8.80,
+                "left"=> 14.53,
                 "shared" => 3
             ),
             8 =>array
@@ -832,8 +832,8 @@ class HomeController extends BaseController
                 "name"=>"公司仓管员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 195,
+                 "top"=> 8.80,
+                "left"=> 14.73,
                 "shared" => 0
             ),
             9 =>array
@@ -843,8 +843,8 @@ class HomeController extends BaseController
                 "name"=>"公司销售会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 197,
+                 "top"=> 8.80,
+                "left"=> 14.93,
                 "shared" => 1
             ),
             10 =>array
@@ -854,8 +854,8 @@ class HomeController extends BaseController
                 "name"=>"公司档案管理员",
                 "isshare"=> 1,
                 "sharename"=>"FSSC档案管理岗",
-                "top"=> 52.25,
-                "left"=> 199,
+                 "top"=> 8.80,
+                "left"=> 15.13,
                 "shared" => 1
             ),
             11 =>array
@@ -865,8 +865,8 @@ class HomeController extends BaseController
                 "name"=>"公司财务经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 201,
+                 "top"=> 8.80,
+                "left"=> 15.33,
                 "shared" => 0
             ),
             12 =>array
@@ -876,8 +876,8 @@ class HomeController extends BaseController
                 "name"=>"公司总账会计",
                 "isshare"=> 1,
                 "sharename"=>"FSSC总账主管岗",
-                "top"=> 52.25,
-                "left"=> 203,
+                 "top"=> 8.80,
+                "left"=> 15.53,
                 "shared" => 1
             ),
              13 =>array
@@ -887,8 +887,8 @@ class HomeController extends BaseController
                 "name"=>"公司销售会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                 "top"=> 52.25,
-                "left"=> 205,
+                 "top"=> 8.80,
+                "left"=> 15.73,
                 "shared" => 1
             ),
              14 =>array
@@ -898,8 +898,8 @@ class HomeController extends BaseController
                 "name"=>"公司财务经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 207,
+                 "top"=> 8.80,
+                "left"=> 15.93,
                 "shared" => 0
             ),
              15 =>array
@@ -909,8 +909,8 @@ class HomeController extends BaseController
                 "name"=>0,
                 "isshare"=> 1,
                 "sharename"=>"FSSC财务审核岗",
-                 "top"=> 52.25,
-                "left"=> 209,
+                "top"=> 8.80,
+                "left"=> 16.13,
                 "shared" => 3
             ),
              16 =>array
@@ -920,8 +920,8 @@ class HomeController extends BaseController
                 "name"=>"公司出纳",
                 "isshare"=> 1,
                 "sharename"=>"FSSC出纳岗",
-                "top"=> 52.25,
-                "left"=> 211,
+                 "top"=> 8.80,
+                "left"=> 16.33,
                 "shared" => 1
             ),
              17 =>array
@@ -931,8 +931,8 @@ class HomeController extends BaseController
                 "name"=>"公司总账会计",
                 "isshare"=> 1,
                 "sharename"=>"FSSC总账主管岗",
-                "top"=> 52.25,
-                "left"=> 213,
+                 "top"=> 8.80,
+                "left"=> 16.53,
                 "shared" => 1
             ),
             18 =>array
@@ -942,8 +942,8 @@ class HomeController extends BaseController
                 "name"=>"签订销售合同",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 180,
+                 "top"=> 32.20,
+                "left"=> 13.33,
                 "shared" => 0
             ),
             19 =>array
@@ -953,8 +953,8 @@ class HomeController extends BaseController
                 "name"=>"审批销售合同",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 183,
+                 "top"=> 32.20,
+                "left"=> 13.53,
                 "shared" => 0
             ),
             20 =>array
@@ -964,8 +964,8 @@ class HomeController extends BaseController
                 "name"=>"销售财务审核",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 186,
+                 "top"=> 32.20,
+                "left"=> 13.73,
                 "shared" => 0
             ),
             21 =>array
@@ -975,8 +975,8 @@ class HomeController extends BaseController
                 "name"=>"生成销售订单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 189,
+                 "top"=> 32.20,
+                "left"=> 13.93,
                 "shared" => 0
             ),
             22 =>array
@@ -986,8 +986,8 @@ class HomeController extends BaseController
                 "name"=>"审核销售订单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 191,
+                 "top"=> 32.20,
+                "left"=> 14.13,
                 "shared" => 0
             ),
             23 =>array
@@ -997,8 +997,8 @@ class HomeController extends BaseController
                 "name"=>"办理销售发货",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 194,
+                 "top"=> 32.20,
+                "left"=> 14.33,
                 "shared" => 0
             ),
             24 =>array
@@ -1008,8 +1008,8 @@ class HomeController extends BaseController
                 "name"=>"开具销售发票",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 197,
+                "top"=> 32.20,
+                "left"=> 14.53,
                 "shared" => 0
             ),
             25 =>array
@@ -1019,8 +1019,8 @@ class HomeController extends BaseController
                 "name"=>"生成应收单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 199,
+                "top"=> 32.20,
+                "left"=> 14.73,
                 "shared" => 0
             ),
             26 =>array
@@ -1030,8 +1030,8 @@ class HomeController extends BaseController
                 "name"=>"审核应收单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 191,
-                "left"=> 203,
+                 "top"=> 32.20,
+                "left"=> 14.93,
                 "shared" => 0
             ),
             27 =>array
@@ -1041,8 +1041,8 @@ class HomeController extends BaseController
                 "name"=>"生成转账凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 205,
+                 "top"=> 32.20,
+                "left"=> 15.13,
                 "shared" => 0
             ),
              28 =>array
@@ -1052,8 +1052,8 @@ class HomeController extends BaseController
                 "name"=>"审核转账凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 207,
+                "top"=> 32.20,
+                "left"=> 15.33,
                 "shared" => 0
             ),
              29 =>array
@@ -1063,8 +1063,8 @@ class HomeController extends BaseController
                 "name"=>"生成收款单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 209,
+                "top"=> 32.20,
+                "left"=> 15.53,
                 "shared" => 0
             ),
              30 =>array
@@ -1074,8 +1074,8 @@ class HomeController extends BaseController
                 "name"=>"审核收款单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 211,
+                "top"=> 32.20,
+                "left"=> 15.73,
                 "shared" => 0
             ),
              31 =>array
@@ -1085,8 +1085,8 @@ class HomeController extends BaseController
                 "name"=>"生成收款凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 213,
+                "top"=> 32.20,
+                "left"=> 15.93,
                 "shared" => 0
             ),
              32 =>array
@@ -1096,8 +1096,8 @@ class HomeController extends BaseController
                 "name"=>"确认收款结算",
                 "isshare"=> 1,
                 "sharename"=>"线上集中结算",
-                "top"=> 191,
-                "left"=> 216,
+               "top"=> 32.20,
+                "left"=> 16.13,
                 "shared" => 1
             ),
              33 =>array
@@ -1107,8 +1107,8 @@ class HomeController extends BaseController
                 "name"=>"凭证审核",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 218,
+                "top"=> 32.20,
+                "left"=> 16.33,
                 "shared" => 0
             ),
              34 =>array
@@ -1118,8 +1118,8 @@ class HomeController extends BaseController
                 "name"=>"实物档案归档",
                 "isshare"=> 1,
                 "sharename"=>"电子档案归档",
-                "top"=> 191,
-                "left"=> 219,
+                "top"=> 32.20,
+                "left"=> 16.53,
                 "shared" => 1
             ),
              35 =>array
@@ -1129,8 +1129,8 @@ class HomeController extends BaseController
                 "name"=>"实物合同",
                 "isshare"=> 1,
                 "sharename"=>"电子合同影像",
-                "top"=> 333,
-                "left"=> 180,
+                "top"=> 53.50,
+                "left"=> 13.33,
                 "shared" => 1
             ),
              36 =>array
@@ -1140,8 +1140,8 @@ class HomeController extends BaseController
                 "name"=>"实物销售订单",
                 "isshare"=> 1,
                 "sharename"=>"电子销售单据",
-                "top"=> 333,
-                "left"=> 182,
+               "top"=> 53.50,
+                "left"=> 13.53,
                 "shared" => 1
             ),
              37 =>array
@@ -1151,8 +1151,8 @@ class HomeController extends BaseController
                 "name"=>"实物出库单",
                 "isshare"=> 1,
                 "sharename"=>"电子出库单",
-                "top"=> 333,
-                "left"=> 184,
+                "top"=> 53.50,
+                "left"=> 13.93,
                 "shared" => 1
             ),
              38 =>array
@@ -1162,8 +1162,8 @@ class HomeController extends BaseController
                 "name"=>"实物发货单",
                 "isshare"=> 1,
                 "sharename"=>"电子发货单",
-                "top"=> 333,
-                "left"=> 186,
+                "top"=> 53.50,
+                "left"=> 14.13,
                 "shared" => 1
             ),
              39 =>array
@@ -1173,8 +1173,8 @@ class HomeController extends BaseController
                 "name"=>"实物发票",
                 "isshare"=> 1,
                 "sharename"=>"电子发票",
-                "top"=> 333,
-                "left"=> 188,
+                "top"=> 53.50,
+                "left"=> 14.33,
                 "shared" => 1
             ),
              40 =>array
@@ -1184,8 +1184,8 @@ class HomeController extends BaseController
                 "name"=>"实物应收单",
                 "isshare"=> 1,
                 "sharename"=>"电子应收单",
-                "top"=> 333,
-                "left"=> 190,
+                "top"=> 53.50,
+                "left"=> 14.53,
                 "shared" => 1
             ),
              41 =>array
@@ -1195,8 +1195,8 @@ class HomeController extends BaseController
                 "name"=>"实物凭证",
                 "isshare"=> 1,
                 "sharename"=>"电子凭证",
-                "top"=> 333,
-                "left"=> 192,
+               "top"=> 53.50,
+                "left"=> 14.73,
                 "shared" => 1
             ),
              42 =>array
@@ -1206,8 +1206,8 @@ class HomeController extends BaseController
                 "name"=>"实物收款单",
                 "isshare"=> 1,
                 "sharename"=>"电子收款单",
-                "top"=> 333,
-                "left"=> 194,
+                "top"=> 53.50,
+                "left"=> 14.93,
                 "shared" => 1
             ),
              43 =>array
@@ -1217,8 +1217,8 @@ class HomeController extends BaseController
                 "name"=>"实物凭证",
                 "isshare"=> 1,
                 "sharename"=>"电子凭证",
-                "top"=> 333,
-                "left"=> 197,
+                "top"=> 53.50,
+                "left"=> 15.13,
                 "shared" => 1
             ),
              44 =>array
@@ -1228,8 +1228,8 @@ class HomeController extends BaseController
                 "name"=>"实物档案",
                 "isshare"=> 1,
                 "sharename"=>"电子档案",
-                "top"=> 333,
-                "left"=> 200,
+                "top"=> 53.50,
+                "left"=> 15.33,
                 "shared" => 1
             ),
              45 =>array
@@ -1239,8 +1239,8 @@ class HomeController extends BaseController
                 "name"=>"企业财务系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 181,
+                "top"=> 76.35,
+                "left"=> 13.33,
                 "shared" => 0
             ),
              46 =>array
@@ -1250,8 +1250,8 @@ class HomeController extends BaseController
                 "name"=>"影像管理系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 184,
+                "top"=> 76.35,
+                "left"=> 13.53,
                 "shared" => 0
             ),
              47 =>array
@@ -1261,8 +1261,8 @@ class HomeController extends BaseController
                 "name"=>"企业ERP管理平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 187,
+                "top"=> 76.35,
+                "left"=> 13.73,
                 "shared" => 0
             ),
              48 =>array
@@ -1272,8 +1272,8 @@ class HomeController extends BaseController
                 "name"=>"财务共享服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 190,
+                "top"=> 76.35,
+                "left"=> 13.93,
                 "shared" => 0
             ),
              49 =>array
@@ -1283,8 +1283,8 @@ class HomeController extends BaseController
                 "name"=>"财务共享服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 192,
+                "top"=> 76.35,
+                "left"=> 14.13,
                 "shared" => 0
             ),
              50 =>array
@@ -1294,8 +1294,8 @@ class HomeController extends BaseController
                 "name"=>"银企直联",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 194,
+                "top"=> 76.35,
+                "left"=> 14.33,
                 "shared" => 0
             ),
              51 =>array
@@ -1305,8 +1305,8 @@ class HomeController extends BaseController
                 "name"=>"电子发票",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 196,
+                "top"=> 76.35,
+                "left"=> 14.53,
                 "shared" => 0
             ),
              52 =>array("sharetb"=> 1)
@@ -1324,8 +1324,8 @@ class HomeController extends BaseController
                 "name"=>"采购员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 179,
+                "top"=> 8.80,
+                "left"=> 13.33,
                 "shared" => 0
             ),
              2 =>array
@@ -1335,8 +1335,8 @@ class HomeController extends BaseController
                 "name"=>"采购经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 183,
+                "top"=> 8.80,
+                "left"=> 13.53,
                 "shared" => 0
             ),
             3 =>array
@@ -1346,8 +1346,8 @@ class HomeController extends BaseController
                 "name"=>"本地档案管理岗",
                 "isshare"=> 1,
                 "sharename"=>"FSSC档案管理岗",
-                "top"=> 52.25,
-                "left"=> 185,
+                "top"=> 8.80,
+                "left"=> 13.73,
                 "shared" => 1
             ),
             4 =>array
@@ -1357,8 +1357,8 @@ class HomeController extends BaseController
                 "name"=>"采购员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 187,
+                "top"=> 8.80,
+                "left"=> 13.93,
                 "shared" => 0
             ),
             5 =>array
@@ -1368,8 +1368,8 @@ class HomeController extends BaseController
                 "name"=>"采购经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 190,
+                "top"=> 8.80,
+                "left"=> 14.13,
                 "shared" => 0
             ),
             6 =>array
@@ -1379,8 +1379,8 @@ class HomeController extends BaseController
                 "name"=>"采购员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 192,
+               "top"=> 8.80,
+                "left"=> 14.33,
                 "shared" => 0
             ),
             7 =>array
@@ -1390,8 +1390,8 @@ class HomeController extends BaseController
                 "name"=>"采购经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 193,
+               "top"=> 8.80,
+                "left"=> 14.53,
                 "shared" => 0
             ),
             8 =>array
@@ -1401,8 +1401,8 @@ class HomeController extends BaseController
                 "name"=>"财务经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 195,
+                "top"=> 8.80,
+                "left"=> 14.73,
                 "shared" => 0
             ),
             9 =>array
@@ -1412,8 +1412,8 @@ class HomeController extends BaseController
                 "name"=>"公司存货会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 197,
+                "top"=> 8.80,
+                "left"=> 14.93,
                 "shared" => 1
             ),
             10 =>array
@@ -1423,8 +1423,8 @@ class HomeController extends BaseController
                 "name"=>"公司档案管理员",
                 "isshare"=> 1,
                 "sharename"=>"FSSC档案管理岗",
-                "top"=> 52.25,
-                "left"=> 199,
+                "top"=> 8.80,
+                "left"=> 15.13,
                 "shared" => 1
             ),
             11 =>array
@@ -1434,8 +1434,8 @@ class HomeController extends BaseController
                 "name"=>"采购员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 201,
+                "top"=> 8.80,
+                "left"=> 15.33,
                 "shared" => 0
             ),
             12 =>array
@@ -1445,8 +1445,8 @@ class HomeController extends BaseController
                 "name"=>"采购经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 203,
+                "top"=> 8.80,
+                "left"=> 15.53,
                 "shared" => 0
             ),
              13 =>array
@@ -1456,8 +1456,8 @@ class HomeController extends BaseController
                 "name"=>"仓管员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 205,
+                "top"=> 8.80,
+                "left"=> 15.73,
                 "shared" => 0
             ),
              14 =>array
@@ -1467,8 +1467,8 @@ class HomeController extends BaseController
                 "name"=>"质检员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 207,
+               "top"=> 8.80,
+                "left"=> 15.93,
                 "shared" => 0
             ),
              15 =>array
@@ -1478,8 +1478,8 @@ class HomeController extends BaseController
                 "name"=>"仓管员",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 52.25,
-                "left"=> 209,
+                "top"=> 8.80,
+                "left"=> 16.13,
                 "shared" => 0
             ),
              16 =>array
@@ -1489,8 +1489,8 @@ class HomeController extends BaseController
                 "name"=>"公司存货会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 211,
+                 "top"=> 8.80,
+                "left"=> 16.33,
                 "shared" => 1
             ),
              17 =>array
@@ -1500,8 +1500,8 @@ class HomeController extends BaseController
                 "name"=>"财务经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 213,
+                 "top"=> 8.80,
+                "left"=> 16.53,
                 "shared" => 0
             ),
              18 =>array
@@ -1511,8 +1511,8 @@ class HomeController extends BaseController
                 "name"=>"",
                 "isshare"=> 1,
                 "sharename"=>"FSSC应付审核岗",
-                "top"=> 52.25,
-                "left"=> 215,
+                 "top"=> 8.80,
+                "left"=> 16.73,
                 "shared" => 3
             ),
              19 =>array
@@ -1522,8 +1522,8 @@ class HomeController extends BaseController
                 "name"=>"公司总账会计",
                 "isshare"=> 1,
                 "sharename"=>"FSSC总账主管岗",
-                "top"=> 52.25,
-                "left"=> 217,
+                "top"=> 8.80,
+                "left"=> 16.93,
                 "shared" => 1
             ),
              20 =>array
@@ -1533,8 +1533,8 @@ class HomeController extends BaseController
                 "name"=>"公司存货会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 219,
+                 "top"=> 8.80,
+                "left"=> 17.13,
                 "shared" => 1
             ),
              21 =>array
@@ -1544,8 +1544,8 @@ class HomeController extends BaseController
                 "name"=>"财务经理",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 52.25,
-                "left"=> 221,
+                "top"=> 8.80,
+                "left"=> 17.33,
                 "shared" => 0
             ),
              22 =>array
@@ -1555,8 +1555,8 @@ class HomeController extends BaseController
                 "name"=>"公司存货会计",
                 "isshare"=> 1,
                 "sharename"=>"本地业务财务",
-                "top"=> 52.25,
-                "left"=> 223,
+                 "top"=> 8.80,
+                "left"=> 17.53,
                 "shared" => 1
             ),
              23 =>array
@@ -1566,8 +1566,8 @@ class HomeController extends BaseController
                 "name"=>"",
                 "isshare"=> 1,
                 "sharename"=>"FSSC应付审核岗",
-                "top"=> 52.25,
-                "left"=> 225,
+                 "top"=> 8.80,
+                "left"=> 17.73,
                 "shared" => 3
             ),
              24 =>array
@@ -1577,8 +1577,8 @@ class HomeController extends BaseController
                 "name"=>"公司出纳",
                 "isshare"=> 1,
                 "sharename"=>"FSSC出纳岗",
-                "top"=> 52.25,
-                "left"=> 227,
+               "top"=> 8.80,
+                "left"=> 17.93,
                 "shared" => 1
             ),
              25 =>array
@@ -1588,8 +1588,8 @@ class HomeController extends BaseController
                 "name"=>"公司总账会计",
                 "isshare"=> 1,
                 "sharename"=>"FSSC总账主管岗",
-                "top"=> 52.25,
-                "left"=> 228,
+                "top"=> 8.80,
+                "left"=> 18.13,
                 "shared" => 1
             ),
              26 =>array
@@ -1599,8 +1599,8 @@ class HomeController extends BaseController
                 "name"=>"选择/上报供应商",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 180,
+                 "top"=> 32.20,
+                "left"=> 13.33,
                 "shared" => 0
             ),
              27 =>array
@@ -1610,8 +1610,8 @@ class HomeController extends BaseController
                 "name"=>"审批供应商申请单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 183,
+                 "top"=> 32.20,
+                "left"=> 13.53,
                 "shared" => 0
             ),
              28 =>array
@@ -1621,8 +1621,8 @@ class HomeController extends BaseController
                 "name"=>"归档供应商档案",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 186,
+                 "top"=> 32.20,
+                "left"=> 13.73,
                 "shared" => 0
             ),
              29 =>array
@@ -1632,8 +1632,8 @@ class HomeController extends BaseController
                 "name"=>"询价比价",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 189,
+                 "top"=> 32.20,
+                "left"=> 13.93,
                 "shared" => 0
             ),
              30 =>array
@@ -1643,8 +1643,8 @@ class HomeController extends BaseController
                 "name"=>"确定供应商/上报采购价额",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 191,
+                 "top"=> 32.20,
+                "left"=> 14.13,
                 "shared" => 0
             ),
              31 =>array
@@ -1654,8 +1654,8 @@ class HomeController extends BaseController
                 "name"=>"审批供应商/审批采购价格",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 194,
+                "top"=> 32.20,
+                "left"=> 14.33,
                 "shared" => 0
             ),
              32 =>array
@@ -1665,8 +1665,8 @@ class HomeController extends BaseController
                 "name"=>"签订采购合同",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 197,
+                "top"=> 32.20,
+                "left"=> 14.53,
                 "shared" => 0
             ),
              33 =>array
@@ -1676,8 +1676,8 @@ class HomeController extends BaseController
                 "name"=>"审批采购合同",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 199,
+                "top"=> 32.20,
+                "left"=> 14.73,
                 "shared" => 0
             ),
              34 =>array
@@ -1687,8 +1687,8 @@ class HomeController extends BaseController
                 "name"=>"采购合同财务审核",
                 "isshare"=> 0,
                 "sharename"=>0,
-                 "top"=> 191,
-                "left"=> 203,
+                "top"=> 32.20,
+                "left"=> 14.93,
                 "shared" => 0
             ),
              35 =>array
@@ -1698,8 +1698,8 @@ class HomeController extends BaseController
                 "name"=>"采购合同归档",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 205,
+                "top"=> 32.20,
+                "left"=> 15.13,
                 "shared" => 0
             ),
              36 =>array
@@ -1709,8 +1709,8 @@ class HomeController extends BaseController
                 "name"=>"签署采购订单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 207,
+                "top"=> 32.20,
+                "left"=> 15.33,
                 "shared" => 0
             ),
              37 =>array
@@ -1720,8 +1720,8 @@ class HomeController extends BaseController
                 "name"=>"审批采购订单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 209,
+                "top"=> 32.20,
+                "left"=> 15.53,
                 "shared" => 0
             ),
              38 =>array
@@ -1731,8 +1731,8 @@ class HomeController extends BaseController
                 "name"=>"办理采购/到货",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 211,
+               "top"=> 32.20,
+                "left"=> 15.73,
                 "shared" => 0
             ),
              39 =>array
@@ -1742,8 +1742,8 @@ class HomeController extends BaseController
                 "name"=>"到库质检",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 213,
+                "top"=> 32.20,
+                "left"=> 15.93,
                 "shared" => 0
             ),
              40 =>array
@@ -1753,8 +1753,8 @@ class HomeController extends BaseController
                 "name"=>"入库",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 216,
+                "top"=> 32.20,
+                "left"=> 16.13,
                 "shared" => 0
             ),
              41 =>array
@@ -1764,8 +1764,8 @@ class HomeController extends BaseController
                 "name"=>"录入采购发票/生成应付单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 218,
+                "top"=> 32.20,
+                "left"=> 16.33,
                 "shared" => 0
             ),
              42 =>array
@@ -1775,8 +1775,8 @@ class HomeController extends BaseController
                 "name"=>"审批应付单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 219,
+                "top"=> 32.20,
+                "left"=> 16.53,
                 "shared" => 0
             ),
              43 =>array
@@ -1786,8 +1786,8 @@ class HomeController extends BaseController
                 "name"=>"生成转账凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 221,
+                "top"=> 32.20,
+                "left"=> 16.73,
                 "shared" => 0
             ),
              44 =>array
@@ -1797,8 +1797,8 @@ class HomeController extends BaseController
                 "name"=>"审核转账凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 225,
+                "top"=> 32.20,
+                "left"=> 16.93,
                 "shared" => 0
             ),
              45 =>array
@@ -1808,8 +1808,8 @@ class HomeController extends BaseController
                 "name"=>"提交付款单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 227,
+                "top"=> 32.20,
+                "left"=> 17.13,
                 "shared" => 0
             ),
              46 =>array
@@ -1819,8 +1819,8 @@ class HomeController extends BaseController
                 "name"=>"审核付款单",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 229,
+                "top"=> 32.20,
+                "left"=> 17.33,
                 "shared" => 0
             ),
              47 =>array
@@ -1830,8 +1830,8 @@ class HomeController extends BaseController
                 "name"=>"生成付款凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 227,
+                "top"=> 32.20,
+                "left"=> 17.53,
                 "shared" => 0
             ),
               48 =>array
@@ -1841,8 +1841,8 @@ class HomeController extends BaseController
                 "name"=>"支付应付款",
                 "isshare"=> 1,
                 "sharename"=>"线上支付",
-                "top"=> 191,
-                "left"=> 231,
+                "top"=> 32.20,
+                "left"=> 17.73,
                 "shared" => 1
             ),
              49 =>array
@@ -1852,8 +1852,8 @@ class HomeController extends BaseController
                 "name"=>"审核付款凭证",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 191,
-                "left"=> 232,
+                "top"=> 32.20,
+                "left"=> 17.93,
                 "shared" => 0
             ),
 
@@ -1864,8 +1864,8 @@ class HomeController extends BaseController
                 "name"=>"实物供应商申请单",
                 "isshare"=> 1,
                 "sharename"=>"电子供应商申请单",
-                "top"=> 333,
-                "left"=> 180,
+                "top"=> 53.50,
+                "left"=> 13.33,
                 "shared" => 1
             ),
              51 =>array
@@ -1875,8 +1875,8 @@ class HomeController extends BaseController
                 "name"=>"实物供应商资质材料",
                 "isshare"=> 1,
                 "sharename"=>"电子供应商资质材料",
-                "top"=> 333,
-                "left"=> 182,
+                "top"=> 53.50,
+                "left"=> 13.53,
                 "shared" => 1
             ),
              52 =>array
@@ -1886,8 +1886,8 @@ class HomeController extends BaseController
                 "name"=>"实物档案",
                 "isshare"=> 1,
                 "sharename"=>"电子档案",
-                "top"=> 333,
-                "left"=> 184,
+               "top"=> 53.50,
+                "left"=> 13.73,
                 "shared" => 1
             ),
              53 =>array
@@ -1897,8 +1897,8 @@ class HomeController extends BaseController
                 "name"=>"实物询报价单",
                 "isshare"=> 1,
                 "sharename"=>"电子询报价单",
-                "top"=> 333,
-                "left"=> 186,
+                "top"=> 53.50,
+                "left"=> 13.93,
                 "shared" => 1
             ),
              54 =>array
@@ -1908,8 +1908,8 @@ class HomeController extends BaseController
                 "name"=>"实物价格审批单",
                 "isshare"=> 1,
                 "sharename"=>"电子价格审批单",
-                "top"=> 333,
-                "left"=> 188,
+                "top"=> 53.50,
+                "left"=> 14.13,
                 "shared" => 1
             ),
              55 =>array
@@ -1919,8 +1919,8 @@ class HomeController extends BaseController
                 "name"=>"实物采购合同",
                 "isshare"=> 1,
                 "sharename"=>"电子采购合同",
-                "top"=> 333,
-                "left"=> 190,
+                "top"=> 53.50,
+                "left"=> 14.33,
                 "shared" => 1
             ),
              56 =>array
@@ -1930,8 +1930,8 @@ class HomeController extends BaseController
                 "name"=>"实物采购订单",
                 "isshare"=> 1,
                 "sharename"=>"电子采购订单",
-                "top"=> 333,
-                "left"=> 192,
+                "top"=> 53.50,
+                "left"=> 14.53,
                 "shared" => 1
             ),
              57 =>array
@@ -1941,8 +1941,8 @@ class HomeController extends BaseController
                 "name"=>"实物采购入库单",
                 "isshare"=> 1,
                 "sharename"=>"电子采购入库单",
-                "top"=> 333,
-                "left"=> 194,
+                "top"=> 53.50,
+                "left"=> 14.73,
                 "shared" => 1
             ),
              58 =>array
@@ -1952,8 +1952,8 @@ class HomeController extends BaseController
                 "name"=>"实物发票",
                 "isshare"=> 1,
                 "sharename"=>"电子发票",
-                "top"=> 333,
-                "left"=> 195,
+                "top"=> 53.50,
+                "left"=> 14.93,
                 "shared" => 1
             ),
              59 =>array
@@ -1963,8 +1963,8 @@ class HomeController extends BaseController
                 "name"=>"实物凭证",
                 "isshare"=> 1,
                 "sharename"=>"电子凭证",
-                "top"=> 333,
-                "left"=> 197,
+                "top"=> 53.50,
+                "left"=> 15.13,
                 "shared" => 1
             ),
              60 =>array
@@ -1974,8 +1974,8 @@ class HomeController extends BaseController
                 "name"=>"实物应收单",
                 "isshare"=> 1,
                 "sharename"=>"电子应收单",
-                "top"=> 333,
-                "left"=> 197,
+                 "top"=> 53.50,
+                "left"=> 15.33,
                 "shared" => 1
             ),
              61 =>array
@@ -1985,8 +1985,8 @@ class HomeController extends BaseController
                 "name"=>"实物付款单",
                 "isshare"=> 1,
                 "sharename"=>"电子付款单",
-                "top"=> 333,
-                "left"=> 195,
+                 "top"=> 53.50,
+                "left"=> 15.53,
                 "shared" => 1
             ),
              62 =>array
@@ -1996,8 +1996,8 @@ class HomeController extends BaseController
                 "name"=>"实物凭证",
                 "isshare"=> 1,
                 "sharename"=>"电子凭证",
-                "top"=> 333,
-                "left"=> 196,
+                 "top"=> 53.50,
+                "left"=> 15.73,
                 "shared" => 1
             ),
              63 =>array
@@ -2007,8 +2007,8 @@ class HomeController extends BaseController
                 "name"=>"实物档案",
                 "isshare"=> 1,
                 "sharename"=>"电子档案",
-                "top"=> 333,
-                "left"=> 200,
+                 "top"=> 53.50,
+                "left"=> 15.93,
                 "shared" => 1
             ),
              64 =>array
@@ -2018,8 +2018,8 @@ class HomeController extends BaseController
                 "name"=>"企业财务系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 181,
+                "top"=> 76.35,
+                "left"=> 13.33,
                 "shared" => 0
             ),
              65 =>array
@@ -2029,8 +2029,8 @@ class HomeController extends BaseController
                 "name"=>"影像管理系统",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 184,
+                "top"=> 76.35,
+                "left"=> 13.53,
                 "shared" => 0
             ),
              66 =>array
@@ -2040,8 +2040,8 @@ class HomeController extends BaseController
                 "name"=>"企业ERP管理平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 187,
+                "top"=> 76.35,
+                "left"=> 13.73,
                 "shared" => 0
             ),
              67 =>array
@@ -2051,8 +2051,8 @@ class HomeController extends BaseController
                 "name"=>"财务共享服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 190,
+                "top"=> 76.35,
+                "left"=> 13.93,
                 "shared" => 0
             ),
              68 =>array
@@ -2062,8 +2062,8 @@ class HomeController extends BaseController
                 "name"=>"财务共享服务平台",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 192,
+               "top"=> 76.35,
+                "left"=> 14.13,
                 "shared" => 0
             ),
              69 =>array
@@ -2073,8 +2073,8 @@ class HomeController extends BaseController
                 "name"=>"银企直联",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 194,
+                "top"=> 76.35,
+                "left"=> 14.33,
                 "shared" => 0
             ),
              70 =>array
@@ -2084,8 +2084,8 @@ class HomeController extends BaseController
                 "name"=>"电子发票",
                 "isshare"=> 0,
                 "sharename"=>0,
-                "top"=> 471,
-                "left"=> 196,
+                "top"=> 76.35,
+                "left"=> 14.53,
                 "shared" => 0
             ),
              71 =>array("sharetb"=> 1)
