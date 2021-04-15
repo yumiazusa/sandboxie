@@ -326,9 +326,9 @@ class HomeController extends BaseController
         if(!$user){
              return false;
         }
-        $data=$this->strategyArray();
+        $data=$this->planArray();
         $data=serialize($data);
-        $user=DB::table('card4')->pluck('id');
+        $user=DB::table('card5')->pluck('id');
         foreach ($user as $k => $v) {
             $card=[
             'carddata' => $data,
@@ -336,7 +336,7 @@ class HomeController extends BaseController
             // 'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
          ];
-         $res = DB::table('card4')->where('id',$v)->update($card);
+         $res = DB::table('card5')->where('id',$v)->update($card);
         }
         if(!$res){
             return [
@@ -2354,432 +2354,432 @@ class HomeController extends BaseController
                 "cid"=>"1",
                 "kind"=>"position",
                 "name"=>"财务总监",
-                "top"=> 145,
-                "left"=> 133,
+                "top"=> 22.13,
+                "left"=> 9.11,
             ),
             2 =>array
             (
                 "cid"=>"2",
                 "kind"=>"department",
                 "name"=>"预算与考核管理处",
-                "top"=> 60,
-                "left"=> 133,
+                "top"=> 9.00,
+                "left"=> 9.11,
             ),
             3 =>array
             (
                 "cid"=>"3",
                 "kind"=>"department",
                 "name"=>"税务与资金管理处",
-                "top"=> 60,
-                "left"=> 139,
+                "top"=> 9.00,
+                "left"=> 9.21,
             ),
             4 =>array
             (
                 "cid"=>"4",
                 "kind"=>"department",
                 "name"=>"信息化与综合处",
-                "top"=> 60,
-                "left"=> 142,
+                "top"=> 9.00,
+                "left"=> 9.31,
             ),
             5 =>array
             (
                 "cid"=>"5",
                 "kind"=>"position",
                 "name"=>"预算与考核管理岗",
-                "top"=> 145,
-                "left"=> 133,
+                "top"=> 22.13,
+                "left"=> 9.21,
             ),
             6 =>array
             (
                 "cid"=>"6",
                 "kind"=>"position",
                 "name"=>"税务与资金管理岗",
-                "top"=> 145,
-                "left"=> 136,
+                "top"=> 22.13,
+                "left"=> 9.31,
             ),
             7 =>array
             (
                 "cid"=>"7",
                 "kind"=>"position",
                 "name"=>"信息化与综合管理岗",
-                "top"=> 145,
-                "left"=> 139,
+                "top"=> 22.13,
+                "left"=> 9.41,
             ),
             8 =>array
             (
                 "cid"=>"8",
                 "kind"=>"position",
                 "name"=>"结算审核处长",
-                "top"=> 145,
-                "left"=> 142,
+                "top"=> 22.13,
+                "left"=> 9.51,
             ),
             9 =>array
             (
                 "cid"=>"9",
                 "kind"=>"position",
                 "name"=>"会计核算处长",
-                "top"=> 145,
-                "left"=> 142,
+                "top"=> 22.13,
+                "left"=> 9.61,
             ),
             10 =>array
             (
                 "cid"=>"10",
                 "kind"=>"position",
                 "name"=>"资产管理处长",
-                "top"=> 145,
-                "left"=> 145,
+                "top"=> 22.13,
+                "left"=> 9.71,
             ),
             11 =>array
             (
                 "cid"=>"11",
                 "kind"=>"position",
                 "name"=>"结算会计",
-                "top"=> 145,
-                "left"=> 148,
+                "top"=> 22.13,
+                "left"=> 9.81,
             ),
             12 =>array
             (
                 "cid"=>"12",
                 "kind"=>"position",
                 "name"=>"核算会计",
-                "top"=> 145,
-                "left"=> 151,
+                "top"=> 22.13,
+                "left"=> 9.91,
             ),
             13 =>array
             (
                 "cid"=>"13",
                 "kind"=>"position",
                 "name"=>"资产管理会计",
-                "top"=> 145,
-                "left"=> 151,
+               "top"=> 22.13,
+                "left"=> 10.01,
             ),
             14 =>array
             (
                 "cid"=>"14",
                 "kind"=>"position",
                 "name"=>"出纳",
-                "top"=> 145,
-                "left"=> 154,
+                "top"=> 22.13,
+                "left"=> 10.11,
             ),
             15 =>array
             (
                 "cid"=>"15",
                 "kind"=>"department",
                 "name"=>"结算审核处",
-                "top"=> 60,
-                "left"=> 145,
+                "top"=> 9.00,
+                "left"=> 9.41,
             ),
             16 =>array
             (
                 "cid"=>"16",
                 "kind"=>"department",
                 "name"=>"会计核算处",
-                "top"=> 60,
-                "left"=> 148,
+                 "top"=> 9.00,
+                "left"=> 9.51,
             ),
             17 =>array
             (
                 "cid"=>"17",
                 "kind"=>"department",
                 "name"=>"资产管理处",
-                "top"=> 60,
-                "left"=> 151,
+                 "top"=> 9.00,
+                "left"=> 9.61,
             ),
             18 =>array
             (
                 "cid"=>"18",
                 "kind"=>"duty",
                 "name"=>"财务战略规划",
-                "top"=> 230,
-                "left"=> 133,
+                "top"=> 35.90,
+                "left"=> 9.11,
             ),
             19 =>array
             (
                 "cid"=>"19",
                 "kind"=>"duty",
                 "name"=>"财务政策制定",
-                "top"=> 230,
-                "left"=> 136,
+                "top"=> 35.90,
+                "left"=> 9.21,
             ),
             20 =>array
             (
                 "cid"=>"20",
                 "kind"=>"duty",
                 "name"=>"预算管理与业绩考核",
-                "top"=> 230,
-                "left"=> 139,
+                "top"=> 35.90,
+                "left"=> 9.31,
             ),
             21 =>array
             (
                 "cid"=>"21",
                 "kind"=>"duty",
                 "name"=>"纳税筹划与资金运作",
-                "top"=> 230,
-                "left"=> 142,
+                "top"=> 35.90,
+                "left"=> 9.41,
             ),
             22 =>array
             (
                 "cid"=>"22",
                 "kind"=>"duty",
                 "name"=>"信息化与财务监督",
-                "top"=> 230,
-                "left"=> 145,
+                "top"=> 35.90,
+                "left"=> 9.51,
             ),
             23 =>array
             (
                 "cid"=>"23",
                 "kind"=>"duty",
                 "name"=>"付款复核",
-                "top"=> 230,
-                "left"=> 148,
+                "top"=> 35.90,
+                "left"=> 9.61,
             ),
             24 =>array
             (
                 "cid"=>"24",
                 "kind"=>"duty",
                 "name"=>"付款审核",
-                "top"=> 230,
-                "left"=> 151,
+                "top"=> 35.90,
+                "left"=> 9.71,
             ),
             25 =>array
             (
                 "cid"=>"25",
                 "kind"=>"duty",
                 "name"=>"资金支付",
-                "top"=> 230,
-                "left"=> 154,
+                "top"=> 35.90,
+                "left"=> 9.81,
             ),
             26 =>array
             (
                 "cid"=>"26",
                 "kind"=>"duty",
                 "name"=>"费用复核",
-                "top"=> 230,
-                "left"=> 157,
+                "top"=> 35.90,
+                "left"=> 9.91,
             ),
             27 =>array
             (
                 "cid"=>"27",
                 "kind"=>"duty",
                 "name"=>"费用核算",
-                "top"=> 230,
-                "left"=> 160,
+                "top"=> 35.90,
+                "left"=> 10.11,
             ),
             28 =>array
             (
                 "cid"=>"28",
                 "kind"=>"duty",
                 "name"=>"资产管理政策制定",
-                "top"=> 230,
-                "left"=> 163,
+               "top"=> 35.90,
+                "left"=> 10.01,
             ),
             29 =>array
             (
                 "cid"=>"29",
                 "kind"=>"duty",
                 "name"=>"资产核算",
-                "top"=> 230,
-                "left"=> 166,
+                "top"=> 35.90,
+                "left"=> 10.31,
             ),
             30 =>array
             (
                 "cid"=>"30",
                 "kind"=>"gsdepartment",
                 "name"=>"鸿途集团水泥财务部",
-                "top"=> 60,
-                "left"=> 777,
+                "top"=> 9.00,
+                "left"=> 56.31,
             ),
             31 =>array
             (
                 "cid"=>"31",
                 "kind"=>"gsdepartment",
                 "name"=>"鸿途集团旅游财务部",
-                "top"=> 60,
-                "left"=> 780,
+                "top"=> 9.00,
+                "left"=> 56.41,
             ),
             32 =>array
             (
                 "cid"=>"32",
                 "kind"=>"gsdepartment",
                 "name"=>"鸿途集团铸造财务部",
-                "top"=> 60,
-                "left"=> 783,
+               "top"=> 9.00,
+                "left"=> 56.51,
             ),
             33 =>array
             (
                 "cid"=>"33",
                 "kind"=>"gsdepartment",
                 "name"=>"鸿途集团煤焦化财务部",
-                "top"=> 60,
-                "left"=> 786,
+                "top"=> 9.00,
+                "left"=> 56.61,
             ),
             34 =>array
             (
                 "cid"=>"34",
                 "kind"=>"gsposition",
                 "name"=>"财务经理",
-                "top"=> 145,
-                "left"=> 777,
+                "top"=> 22.13,
+                "left"=> 56.31,
             ),
             35 =>array
             (
                 "cid"=>"35",
                 "kind"=>"gsposition",
                 "name"=>"总账会计",
-                "top"=> 145,
-                "left"=> 780,
+                "top"=> 22.13,
+                "left"=> 56.41,
             ),
             36 =>array
             (
                 "cid"=>"36",
                 "kind"=>"gsposition",
                 "name"=>"采购会计",
-                "top"=> 145,
-                "left"=> 783,
+               "top"=> 22.13,
+                "left"=> 56.51,
             ),
             36 =>array
             (
                 "cid"=>"36",
                 "kind"=>"gsposition",
                 "name"=>"结算会计",
-                "top"=> 145,
-                "left"=> 786,
+                "top"=> 22.13,
+                "left"=> 56.61,
             ),
             37 =>array
             (
                 "cid"=>"37",
                 "kind"=>"gsposition",
                 "name"=>"销售会计",
-                "top"=> 145,
-                "left"=> 789,
+                "top"=> 22.13,
+                "left"=> 56.71,
             ),
             38 =>array
             (
                 "cid"=>"38",
                 "kind"=>"gsposition",
                 "name"=>"资产会计",
-                "top"=> 145,
-                "left"=> 792,
+                "top"=> 22.13,
+                "left"=> 56.81,
             ),
             39 =>array
             (
                 "cid"=>"39",
                 "kind"=>"gsposition",
                 "name"=>"成本会计",
-                "top"=> 145,
-                "left"=> 795,
+                "top"=> 22.13,
+                "left"=> 56.91,
             ),
             40 =>array
             (
                 "cid"=>"40",
                 "kind"=>"gsposition",
                 "name"=>"税务会计",
-                "top"=> 145,
-                "left"=> 798,
+                "top"=> 22.13,
+                "left"=> 57.01,
             ),
             41 =>array
             (
                 "cid"=>"41",
                 "kind"=>"gsposition",
                 "name"=>"出纳",
-                "top"=> 145,
-                "left"=> 801,
+                 "top"=> 22.13,
+                "left"=> 57.11,
             ),
             42 =>array
             (
                 "cid"=>"42",
                 "kind"=>"gsposition",
                 "name"=>"预算会计",
-                "top"=> 145,
-                "left"=> 804,
+                 "top"=> 22.13,
+                "left"=> 57.11,
             ),
             43 =>array
             (
                 "cid"=>"43",
                 "kind"=>"gsduty",
                 "name"=>"财务分析",
-                "top"=> 229,
-                "left"=> 777,
+                "top"=> 35.90,
+                "left"=> 56.31,
             ),
             44 =>array
             (
                 "cid"=>"44",
                 "kind"=>"gsduty",
                 "name"=>"总账核算",
-                "top"=> 229,
-                "left"=> 780,
+                "top"=> 35.90,
+                "left"=> 56.41,
             ),
             45 =>array
             (
                 "cid"=>"45",
                 "kind"=>"gsduty",
                 "name"=>"应付审核/应付对账",
-                "top"=> 229,
-                "left"=> 783,
+                "top"=> 35.90,
+                "left"=> 56.51,
             ),
             46 =>array
             (
                 "cid"=>"46",
                 "kind"=>"gsduty",
                 "name"=>"费用核算",
-                "top"=> 229,
-                "left"=> 786,
+                "top"=> 35.90,
+                "left"=> 56.61,
             ),
             47 =>array
             (
                 "cid"=>"47",
                 "kind"=>"gsduty",
                 "name"=>"应收审核/应收对账",
-                "top"=> 229,
-                "left"=> 789,
+               "top"=> 35.90,
+                "left"=> 56.71,
             ),
             48 =>array
             (
                 "cid"=>"48",
                 "kind"=>"gsduty",
                 "name"=>"资产核算",
-                "top"=> 229,
-                "left"=> 792,
+                "top"=> 35.90,
+                "left"=> 56.81,
             ),
             49 =>array
             (
                 "cid"=>"49",
                 "kind"=>"gsduty",
                 "name"=>"成本分析/成本核算",
-                "top"=> 229,
-                "left"=> 795,
+                "top"=> 35.90,
+                "left"=> 56.91,
             ),
             50 =>array
             (
                 "cid"=>"50",
                 "kind"=>"gsduty",
                 "name"=>"税务筹划",
-                "top"=> 229,
-                "left"=> 798,
+                "top"=> 35.90,
+                "left"=> 57.01,
             ),
             51 =>array
             (
                 "cid"=>"51",
                 "kind"=>"gsduty",
                 "name"=>"收款付款",
-                "top"=> 229,
-                "left"=> 801,
+                "top"=> 35.90,
+                "left"=> 57.11,
             ),
             52 =>array
             (
                 "cid"=>"52",
                 "kind"=>"gsduty",
                 "name"=>"预算编制",
-                "top"=> 229,
-                "left"=> 804,
+                "top"=> 35.90,
+                "left"=> 57.21,
             ),
              53 =>array
             (
                 "cid"=>"53",
                 "kind"=>"gsposition",
                 "name"=>"采购会计",
-                "top"=> 145,
-                "left"=> 807,
+                "top"=> 22.13,
+                "left"=> 57.21,
             )
         );
         return $carddata;

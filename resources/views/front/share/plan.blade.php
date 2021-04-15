@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="/layui/css/layui.css">
         <link rel="stylesheet" type="text/css" href="css/styleplan.css" />
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/drag.js"></script>
+        <script type="text/javascript" src="js/drag1.js"></script>
         <script type="text/javascript" src="js/jquery.flip.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
@@ -119,14 +119,14 @@
      </tr>
   </tbody>
 </table>
- <dl><img src="img/05.jpg" width=90 height=10%></dl>
- <!-- @foreach($data as $k=>$v)
+<!--  <dl><img src="img/05.jpg" width=90 height=10%></dl> -->
+ @foreach($data as $k=>$v)
  <dl class="dl {{$data[$k]['kind']}}" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}">
   <div class="card1">
   </div>
   <p>{{$data[$k]['name']}}</p>
 </dl>
-@endforeach -->
+@endforeach
 <!--  <dl class="dl" id="dll" leftno="13.5" topno="9">
   <div id='card2' class="card1">
   <p>财务经理</p>
@@ -153,6 +153,8 @@
         $('#bu1').click(function(){
           var left =new Array;
           var top =new Array;
+          var hightW = window.innerHeight;
+          var widthW = window.innerWidth;
           var cid =new Array;
           var kind =new Array;
           var name =new Array;
@@ -160,8 +162,8 @@
           var i = 0;
             $('.box-4 dl').each(function(){
             var offset = $(this).offset();
-            left[i] = offset.left;
-            top[i] = offset.top;
+            left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
+            top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
             cid[i] = $(this).attr('cid');
             kind[i] = $(this).attr('kind');
             name[i] = $(this).attr('name');
@@ -231,47 +233,47 @@
         });
 
          $('#bu7').click(function(){
-        //     var reurl = $(this).attr('url');
-        //     $.ajax({
-        //     type : "POST",
-        //     dataType:"json",
-        //     url : reurl,
-        //     data: "username=chen&nickname=alien",
-        //     beforeSend: function(){
-        //           layer.load();
-        //         },
-        //     //请求成功
-        //     success : function(result) {
-        //         layer.close();
-        //         layer.msg(result.msg, {icon: result.code}, function () {
-        //                 if (result.reload) {
-        //                     location.reload();
-        //                 }
-        //             });
-        //     },
-        //     //请求失败，包含具体的错误信息
-        //     error : function(e){
-        //         layer.msg(e.msg, {icon: e.code}, function () {
-        //                 if (e.reload) {
-        //                     location.reload();
-        //                 }
-        //             });
-        //     }
-        // });
+            var reurl = $(this).attr('url');
+            $.ajax({
+            type : "POST",
+            dataType:"json",
+            url : reurl,
+            data: "username=chen&nickname=alien",
+            beforeSend: function(){
+                  layer.load();
+                },
+            //请求成功
+            success : function(result) {
+                layer.close();
+                layer.msg(result.msg, {icon: result.code}, function () {
+                        if (result.reload) {
+                            location.reload();
+                        }
+                    });
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                layer.msg(e.msg, {icon: e.code}, function () {
+                        if (e.reload) {
+                            location.reload();
+                        }
+                    });
+            }
+        });
 
-          var hightW = window.innerHeight;
-          var widthW = window.innerWidth;
-          var left =new Array;
-          var top =new Array;
-          var i = 0;
-          $('.box-4 dl').each(function(){
-            var offset = $(this).offset();
-            left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
-            top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
-            alert(top);
-            alert(left);
-            i++;
-          });
+          // var hightW = window.innerHeight;
+          // var widthW = window.innerWidth;
+          // var left =new Array;
+          // var top =new Array;
+          // var i = 0;
+          // $('.box-4 dl').each(function(){
+          //   var offset = $(this).offset();
+          //   left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
+          //   top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
+          //   alert(top);
+          //   alert(left);
+          //   i++;
+          // });
         });
 
     </script>

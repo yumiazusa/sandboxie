@@ -25,9 +25,9 @@
   <button type="button" class="layui-btn layui-btn-danger layui-btn-sm" id="bu1" url="{{url('savestrategy')}}"><i class="layui-icon">保存&nbsp;&#xe621;</i></button>
 <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu5" title="重置" url="{{url('restrategy')}}"><i class="layui-icon">&#xe669;</i></button>
 <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu6" title="返回首页"><i class="layui-icon">&#xe68e;</i></button>
- @if ($user->studentid === "20201013")
+ <!-- @if ($user->studentid === "20201013")
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu7" title="刷新卡片" url="{{url('refee')}}"><i class="layui-icon">&#xe68e;</i></button>
-     @endif
+     @endif -->
   <table class="layui-table table" >
   <tbody>
      <tr>
@@ -117,7 +117,7 @@
           var i = 0;
             $('.box-4 dl').each(function(){
             var offset = $(this).offset();
-             left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
+            left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
             top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
             cid[i] = $(this).attr('cid');
             kind[i] = $(this).attr('kind');
