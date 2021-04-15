@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/layui/css/layui.css">
         <link rel="stylesheet" type="text/css" href="css/stylestrategy.css" />
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/drag1.js"></script>
+        <script type="text/javascript" src="js/drag.js"></script>
         <script type="text/javascript" src="js/jquery.flip.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
