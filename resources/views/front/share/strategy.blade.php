@@ -25,9 +25,9 @@
   <button type="button" class="layui-btn layui-btn-danger layui-btn-sm" id="bu1" url="{{url('savestrategy')}}"><i class="layui-icon">保存&nbsp;&#xe621;</i></button>
 <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu5" title="重置" url="{{url('restrategy')}}"><i class="layui-icon">&#xe669;</i></button>
 <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu6" title="返回首页"><i class="layui-icon">&#xe68e;</i></button>
- @if ($user->studentid === "20201013")
+<!--  @if ($user->studentid === "20201013")
      <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal" id="bu7" title="刷新卡片" url="{{url('refee')}}"><i class="layui-icon">&#xe68e;</i></button>
-     @endif
+     @endif -->
   <table class="layui-table table" >
   <tbody>
      <tr>
