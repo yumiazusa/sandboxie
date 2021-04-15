@@ -326,9 +326,9 @@ class HomeController extends BaseController
         if(!$user){
              return false;
         }
-        $data=$this->planArray();
+        $data=$this->strategyArray();
         $data=serialize($data);
-        $user=DB::table('card5')->pluck('id');
+        $user=DB::table('card4')->pluck('id');
         foreach ($user as $k => $v) {
             $card=[
             'carddata' => $data,
@@ -336,7 +336,7 @@ class HomeController extends BaseController
             // 'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
          ];
-         $res = DB::table('card5')->where('id',$v)->update($card);
+         $res = DB::table('card4')->where('id',$v)->update($card);
         }
         if(!$res){
             return [
