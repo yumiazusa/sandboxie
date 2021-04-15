@@ -326,9 +326,9 @@ class HomeController extends BaseController
         if(!$user){
              return false;
         }
-        $data=$this->purchaseArray();
+        $data=$this->strategyArray();
         $data=serialize($data);
-        $user=DB::table('card3')->pluck('id');
+        $user=DB::table('card4')->pluck('id');
         foreach ($user as $k => $v) {
             $card=[
             'carddata' => $data,
@@ -336,7 +336,7 @@ class HomeController extends BaseController
             // 'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
          ];
-         $res = DB::table('card3')->where('id',$v)->update($card);
+         $res = DB::table('card4')->where('id',$v)->update($card);
         }
         if(!$res){
             return [
@@ -2101,240 +2101,240 @@ class HomeController extends BaseController
                 "cid"=>"1",
                 "kind"=>"function",
                 "name"=>"成本中心",
-                "top"=> 418,
-                "left"=> 303,
+                "top"=> 69.05,
+                "left"=> 20.1,
             ),
             2 =>array
             (
                 "cid"=>"2",
                 "kind"=>"function",
                 "name"=>"利润中心",
-                "top"=> 418,
-                "left"=> 333,
+                "top"=> 69.05,
+                "left"=> 23,
             ),
             3 =>array
             (
                 "cid"=>"3",
                 "kind"=>"function",
                 "name"=>"财务服务公司",
-                "top"=> 418,
-                "left"=> 363,
+                "top"=> 69.05,
+                "left"=> 26,
             ),
             4 =>array
             (
                 "cid"=>"4",
                 "kind"=>"pattern",
                 "name"=>"单中心",
-                "top"=> 68,
-                "left"=> 558,
+                "top"=> 17.17,
+                "left"=> 39.7,
             ),
             5 =>array
             (
                 "cid"=>"5",
                 "kind"=>"pattern",
                 "name"=>"多中心-多业态",
-                "top"=> 68,
-                "left"=> 617,
+                "top"=> 10.10,
+                "left"=> 39.7,
             ),
             6 =>array
             (
                 "cid"=>"6",
                 "kind"=>"pattern",
                 "name"=>"多中心-多区域",
-                "top"=> 130,
-                "left"=> 558,
+                "top"=> 10.10,
+                "left"=> 43.44,
             ),
             7 =>array
             (
                 "cid"=>"7",
                 "kind"=>"pattern",
                 "name"=>"专长中心",
-                "top"=> 130,
-                "left"=> 617,
+                "top"=> 17.17,
+                "left"=> 43.44,
             ),
             8 =>array
             (
                 "cid"=>"8",
                 "kind"=>"object",
                 "name"=>"鸿途集团水泥有限公司",
-                "top"=> 147,
-                "left"=> 137,
+                "top"=> 24.33,
+                "left"=> 10.02,
             ),
             9 =>array
             (
                 "cid"=>"9",
                 "kind"=>"object",
                 "name"=>"鸿途集团股份有限公司",
-                "top"=> 147,
-                "left"=> 142,
+                "top"=> 24.33,
+                "left"=> 10.32,
             ),
             10 =>array
             (
                 "cid"=>"10",
                 "kind"=>"object",
                 "name"=>"金州鸿途煤焦化有限公司",
-                "top"=> 147,
-                "left"=> 147,
+                "top"=> 24.33,
+                "left"=> 10.62,
             ),
             11 =>array
             (
                 "cid"=>"11",
                 "kind"=>"object",
                 "name"=>"鸿途集团万象商贸物流公司",
-                "top"=> 147,
-                "left"=> 152,
+                "top"=> 24.33,
+                "left"=> 10.92,
             ),
             12 =>array
             (
                 "cid"=>"12",
                 "kind"=>"object",
                 "name"=>"鸿途集团水泥中部区公司(4家)",
-                "top"=> 147,
-                "left"=> 157,
+                "top"=> 24.33,
+                "left"=> 11.22,
             ),
             13 =>array
             (
                 "cid"=>"13",
                 "kind"=>"object",
                 "name"=>"鸿途集团铸造板块公司(4家)",
-                "top"=> 147,
-                "left"=> 162,
+                "top"=> 24.33,
+                "left"=> 11.52,
             ),
             14 =>array
             (
                 "cid"=>"14",
                 "kind"=>"object",
                 "name"=>"鸿途集团水泥北部区公司(12家)",
-                "top"=> 147,
-                "left"=> 167,
+                 "top"=> 24.33,
+                "left"=> 11.82,
             ),
             15 =>array
             (
                 "cid"=>"15",
                 "kind"=>"object",
                 "name"=>"鸿途集团水泥南部区公司(2家)",
-                "top"=> 147,
-                "left"=> 172,
+                 "top"=> 24.33,
+                "left"=> 12.12,
             ),
             16 =>array
             (
                 "cid"=>"16",
                 "kind"=>"object",
                 "name"=>"鸿途集团旅游板块公司(3家)",
-                "top"=> 147,
-                "left"=> 177,
+                "top"=> 24.33,
+                "left"=> 12.42,
             ),
             17 =>array
             (
                 "cid"=>"17",
                 "kind"=>"object",
                 "name"=>"中国鸿途(香港)有限公司",
-                "top"=> 147,
-                "left"=> 182,
+                "top"=> 24.33,
+                "left"=> 12.72,
             ),
             18 =>array
             (
                 "cid"=>"18",
                 "kind"=>"object",
                 "name"=>"金州市火电厂",
-                "top"=> 147,
-                "left"=> 187,
+                "top"=> 24.33,
+                "left"=> 13.02,
             ),
             19 =>array
             (
                 "cid"=>"19",
                 "kind"=>"object",
                 "name"=>"金州鸿途实业有限公司",
-                "top"=> 147,
-                "left"=> 192,
+               "top"=> 24.33,
+                "left"=> 13.32,
             ),
             20 =>array
             (
                 "cid"=>"20",
                 "kind"=>"object",
                 "name"=>"中原大福国际机场有限公司",
-                "top"=> 147,
-                "left"=> 197,
+                "top"=> 24.33,
+                "left"=> 13.62,
             ),
             21 =>array
             (
                 "cid"=>"21",
                 "kind"=>"content",
                 "name"=>"费用共享",
-                "top"=> 234,
-                "left"=> 137,
+                "top"=> 38.57,
+                "left"=> 10.02,
             ),
             22 =>array
             (
                 "cid"=>"22",
                 "kind"=>"content",
                 "name"=>"采购到应付共享",
-                "top"=> 234,
-                "left"=> 140,
+                "top"=> 38.57,
+                "left"=> 10.32,
             ),
             23 =>array
             (
                 "cid"=>"23",
                 "kind"=>"content",
                 "name"=>"销售到应收共享",
-                "top"=> 234,
-                "left"=> 143,
+                "top"=> 38.57,
+                "left"=> 10.62,
             ),
             24 =>array
             (
                 "cid"=>"24",
                 "kind"=>"content",
                 "name"=>"总账报表共享",
-                "top"=> 234,
-                "left"=> 146,
+                "top"=> 38.57,
+                "left"=> 10.92,
             ),
             25 =>array
             (
                 "cid"=>"25",
                 "kind"=>"content",
                 "name"=>"固定资产共享",
-                "top"=> 234,
-                "left"=> 149,
+                "top"=> 38.57,
+                "left"=> 11.22,
             ),
             26 =>array
             (
                 "cid"=>"26",
                 "kind"=>"content",
                 "name"=>"资金结算共享",
-                "top"=> 234,
-                "left"=> 152,
+                "top"=> 38.57,
+                "left"=> 11.52,
             ),
             27 =>array
             (
                 "cid"=>"27",
                 "kind"=>"location",
                 "name"=>"大连",
-                "top"=> 57,
-                "left"=> 750,
+                "top"=> 73.00,
+                "left"=> 69.17,
             ),
             28 =>array
             (
                 "cid"=>"28",
                 "kind"=>"location",
                 "name"=>"郑州",
-                "top"=> 57,
-                "left"=> 820,
+                "top"=> 73.00,
+                "left"=> 76.41,
             ),
             29 =>array
             (
                 "cid"=>"29",
                 "kind"=>"location",
                 "name"=>"天津",
-                "top"=> 57,
-                "left"=> 890,
+                "top"=> 73.00,
+                "left"=> 82.86,
             ),
             30 =>array
             (
                 "cid"=>"30",
                 "kind"=>"function",
                 "name"=>"职责中心",
-                "top"=> 418,
-                "left"=> 393,
+                "top"=> 69.05,
+                "left"=> 29,
             ),
             'content' =>array
             (
