@@ -19,7 +19,7 @@ class CommentRepository
                 Searchable::buildQuery($query, $condition);
             })
             ->with('entity:id,name')
-            ->with('user:id,name')
+            ->with('user:id')
             ->orderBy('id', 'desc')
             ->paginate($perPage);
         $data->transform(function ($item) {
