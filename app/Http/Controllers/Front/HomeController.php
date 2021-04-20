@@ -13,7 +13,8 @@ class HomeController extends BaseController
     public function index()
     {
         $entities = Entity::query()->External()->get();
-        return view('welcome', compact('entities'));
+        $res = DB::table('front_nav')->get();
+        return view('welcome', compact('entities','res'));
     }
 
     public function content($entityId)

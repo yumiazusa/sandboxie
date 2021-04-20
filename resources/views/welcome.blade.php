@@ -85,14 +85,26 @@
                 <thead>
                 <tr>
                 <th rowspan="2" style="text-align: center;">学号:{{ $user->studentid }}</th>
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('strategy',) }}'>共享战略规划</a></th>
+
+
+
+                @foreach($res as $k=>$v)
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" 
+                    @if ($res[$k]->status === 1)
+                    href='<?php echo $res[$k]->url; ?>'
+                    @elseif ($res[$k]->status === 0)
+                    href='javascript:void(0);'
+                    @endif
+                    >{{$res[$k]->title}}</a></th>
+                    @endforeach
+           <!--      <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('strategy',) }}'>共享战略规划</a></th>
                 <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('plan',) }}'>共享组织规划</a></th>
                  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('feenav',) }}'>费用共享</a></th>
-               <!--  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('salenav',) }}'>销售共享</a></th>
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('purchasenav',) }}'>采购共享</a></th> -->
-               <!--  <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>费用共享</a></th> -->
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('salenav',) }}'>销售共享</a></th>
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='{{ url('purchasenav',) }}'>采购共享</a></th>
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>费用共享</a></th>
                 <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>销售共享</a></th>
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>采购共享</a></th>
+                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href='javascript:void(0);'>采购共享</a></th> -->
                  </tr>
                 </thead>
                 <tr><td  colspan="6"><a href="{{ route('member::logout') }}">退出登录</a></td></tr>
