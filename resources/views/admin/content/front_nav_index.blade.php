@@ -43,7 +43,7 @@
                     @include('admin.listHead', ['data' => App\Model\Admin\Content::$listField])
                     <th lay-data="{field:'created_at'}">添加时间</th>
                     <th lay-data="{field:'updated_at'}">更新时间</th>
-                    <th lay-data="{field:'status'}">状态(1开启/0关闭)</th>
+                    <th lay-data="{field:'status',title:'状态',templet:'#status'}"></th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>
@@ -75,6 +75,13 @@
     @foreach(App\Model\Admin\Content::$actionField as $k => $v)
     <a href="<% d.{{$k}} %>" class="layui-table-link" title="{{ $v['description'] }}" style="margin-left: 5px">{{ $v['title'] }}</a>
     @endforeach
+</script>
+<script type="text/html" id="status">
+  <%#  if( d.status == 1){ %>
+  <div>开启</div>
+  <%#  } else { %>
+   <div>关闭</div>
+  <%#  } %>
 </script>
 
 @section('js')

@@ -89,7 +89,6 @@ class ContentController extends Controller
         $condition = $request->only($this->formNames);
 
         $data = ContentRepository::list($entity, $perPage, $condition);
-
         return $data;
     }
 
