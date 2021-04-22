@@ -61,7 +61,8 @@ class ContentController extends Controller
         Content::$listField = [
             'title' => '标题'
         ];
-        return view('admin.content.index', [
+        $view = $this->getIndexViewPath();
+        return view($view, [
             'breadcrumb' => $this->breadcrumb,
             'entity' => $entity,
             'entityModel' => $this->entity,
@@ -383,6 +384,19 @@ class ContentController extends Controller
         $path = resource_path('views/admin/content/' . $modelName . '_add.blade.php');
         if (file_exists($path)) {
             $view = 'admin.content.' . $modelName . '_add';
+        }
+
+        return $view;
+    }
+
+     protected function getIndexViewPath()
+    {
+        $view = 'admin.content.index';
+        // 自定义模板
+        $modelName = Str::singular($this->entity->table_name);
+        $path = resource_path('views/admin/content/' . $modelName . '_index.blade.php');
+        if (file_exists($path)) {
+            $view = 'admin.content.' . $modelName . '_index';
         }
 
         return $view;
