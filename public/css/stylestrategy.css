@@ -56,12 +56,46 @@ html, body { height: 100%; background: #efefef;}
  			  color: #585656;
 			  border:1px dashed #264863;
 			  background:#ece7e7;
+			  padding: 0 0 0 0;
  }
  .table1 tr td:nth-child(3){
  		      width:20%;
 			  border:1px dashed #264863;
 			  background:#ece7e7;
  }
+
+ .table2{
+ 	margin:0 0 0 0;
+ 	padding: 0 0 0 0;
+ 	height: 100%;
+ }
+
+ .table2 tr{
+ 	margin:0 0 0 0;
+ 	padding: 0 0 0 0;
+ }
+
+.table2 tr td:first-child{
+			  width: 50%;
+ 			  font-size:50%;
+ 			  color: #585656;
+			  border-width: 0px 0px 0px 0px;
+			  border-style: dotted;
+			  border-color: #264863;
+			  background:#eceded;
+ }
+
+ .table2 tr td:nth-child(2){
+			  width: 50%;
+ 			  font-size:50%;
+ 			  color: #585656;
+ 			  border-width: 0px 0px 0px 0px;
+			  border-style: dotted;
+			  border-color: #264863;
+			  background:#ece7e7;
+ }
+
+
   input{
  		     font-size:25px;
  }

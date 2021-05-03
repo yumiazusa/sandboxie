@@ -43,11 +43,13 @@
           </tr>
            <tr>
             <td id="tdms2">服务对象</td>
-             <td>共享服务中心服务对象</td>
+             <!-- <td>共享服务中心服务对象</td> -->
+             <td><table class="layui-table table2"><tr><td>初阶服务对象</td><td>长阶服务对象</td></tr></table></td>
           </tr>
           <tr>
             <td id="tdms3">服务内容</td>
-             <td>共享服务中心服务内容</td>
+            <!--  <td>共享服务中心服务内容</td> -->
+            <td><table class="layui-table table2"><tr><td>首期服务内容</td><td>远期服务内容</td></tr></table></td>
           </tr>
         </tbody>
         </table>
