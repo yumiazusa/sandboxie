@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\'><i class=\'layui-icon layui-icon-add-1\'></i>重置卡片</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
@@ -108,5 +108,48 @@
             }
         });
         }
+         $('.renewcard').click(function(){
+            var url = $(this).attr('url');
+             layer.confirm('选择要重置的卡片？', {
+             btn: ['战略卡片','组织卡片','费用卡片','销售卡片','采购卡片','取消重置'] //按钮
+            }, function(){
+                layer.confirm('确定重置？', {
+                btn: ['确定','取消'] },
+                function(){
+                  var kind = "strategy";
+                  $.ajax({
+                  type : "POST",
+                  dataType:"json",
+                  url : url,
+                  data: {'kind':kind},
+                  beforeSend: function(){
+                  layer.msg('正在重置中');
+                   },
+                 //请求成功
+                success : function(result) {
+                layer.close();
+                layer.msg(result.msg, {icon: result.code}, function () {
+                        if (result.reload) {
+                            location.reload();
+                        }
+                    });
+                   },
+                 //请求失败，包含具体的错误信息
+                error : function(e){
+                layer.msg(e.msg, {icon: e.code}, function () {
+                        if (e.reload) {
+                            location.reload();
+                        }
+                    });
+              }
+                });
+                }
+              );
+            },function(){
+                alert('ok2');
+            }
+
+            );
+         });
     </script>
 @endsection

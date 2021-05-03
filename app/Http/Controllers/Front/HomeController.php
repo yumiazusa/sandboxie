@@ -322,23 +322,36 @@ class HomeController extends BaseController
             ];
     }
 
-    public function reFee(){
-        $user = Auth::guard('member')->user();
-        if(!$user){
-             return false;
-        }
-        $data=$this->strategyArray();
-        $data=serialize($data);
-        $user=DB::table('card4')->pluck('id');
-        foreach ($user as $k => $v) {
+    //重置所有卡片
+    public function reFee(Request $request){
+        if($request['kind'] === 'strategy'){
+            $data=$this->strategyArray();
+            $data=serialize($data);
+            $user=DB::table('card4')->pluck('id');
+            foreach ($user as $k => $v) {
             $card=[
             'carddata' => $data,
             // 'cardposition' => serialize($cardposition),
             // 'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-         ];
-         $res = DB::table('card4')->where('id',$v)->update($card);
+             ];
+            $res = DB::table('card4')->where('id',$v)->update($card);
+             }
         }
+
+
+        // $data=$this->strategyArray();
+        // $data=serialize($data);
+        // $user=DB::table('card4')->pluck('id');
+        // foreach ($user as $k => $v) {
+        //     $card=[
+        //     'carddata' => $data,
+        //     // 'cardposition' => serialize($cardposition),
+        //     // 'created_at' => date("Y-m-d H:i:s"),
+        //     'updated_at' => date("Y-m-d H:i:s"),
+        //  ];
+        //  $res = DB::table('card4')->where('id',$v)->update($card);
+        // }
         if(!$res){
             return [
                 'code' => 2,
