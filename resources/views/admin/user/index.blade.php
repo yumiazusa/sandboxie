@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\'><i class=\'layui-icon layui-icon-add-1\'></i>重置卡片</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'战略\' kind=\'strategy\'><i class=\'layui-icon layui-icon-add-1\'></i>重置战略卡片</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
@@ -109,12 +109,12 @@
         });
         }
          $('.renewcard').click(function(){
-             var kind = '战略';
+             var data = $(this).attr('data');
+             var kind = $(this).attr('kind');
              var url = $(this).attr('url');
-             layer.confirm('确定重置'+kind+'卡片？', {
-             btn: ['重置'+kind+'卡片','取消重置'] //按钮
+             layer.confirm('确定重置'+data+'卡片？', {
+             btn: ['重置'+data+'卡片','取消重置'] //按钮
             }, function(){
-                var kind = "strategy";
                 recard(kind,url);
             }
             );
