@@ -68,12 +68,12 @@
         <table class="layui-table table4">
           <tbody>
           <tr>
-            <td>降低财务成本</td>
-            <td>加强集团管控</td>
+            <td>短期战略</td>
+            <td>中期战略</td>
           </tr>
            <tr>
-            <td>促进财务转型</td>
-            <td>支持企业发展</td>
+            <td>长期战略</td>
+            <td>发展目标</td>
           </tr>
         </tbody>
         </table>

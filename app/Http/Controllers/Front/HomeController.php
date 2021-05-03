@@ -2102,7 +2102,7 @@ class HomeController extends BaseController
                 "cid"=>"1",
                 "kind"=>"function",
                 "name"=>"成本中心",
-                "top"=> 69.05,
+                "top"=> 66.05,
                 "left"=> 20.1,
             ),
             2 =>array
@@ -2110,7 +2110,7 @@ class HomeController extends BaseController
                 "cid"=>"2",
                 "kind"=>"function",
                 "name"=>"利润中心",
-                "top"=> 69.05,
+                "top"=> 66.05,
                 "left"=> 23,
             ),
             3 =>array
@@ -2118,7 +2118,7 @@ class HomeController extends BaseController
                 "cid"=>"3",
                 "kind"=>"function",
                 "name"=>"财务服务公司",
-                "top"=> 69.05,
+                "top"=> 66.05,
                 "left"=> 26,
             ),
             4 =>array
@@ -2344,6 +2344,30 @@ class HomeController extends BaseController
                 "name"=>"降低财务成本",
                 "top"=> 72.05,
                 "left"=> 29,
+            ),
+            32 =>array
+            (
+                "cid"=>"32",
+                "kind"=>"function",
+                "name"=>"加强集团管控",
+                "top"=> 72.05,
+                "left"=> 26,
+            ),
+            33 =>array
+            (
+                "cid"=>"33",
+                "kind"=>"function",
+                "name"=>"促进财务转型",
+                "top"=> 72.05,
+                "left"=> 23,
+            ),
+            34 =>array
+            (
+                "cid"=>"34",
+                "kind"=>"function",
+                "name"=>"支持企业发展",
+                "top"=> 72.05,
+                "left"=> 20,
             ),
             'content' =>array
             (
