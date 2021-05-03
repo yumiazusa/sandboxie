@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'战略\' kind=\'strategy\'><i class=\'layui-icon layui-icon-add-1\'></i>重置战略卡片</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::user.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::user.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增会员</a>&nbsp;&nbsp;<a href=\'{{ route('admin::user.excel') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>批量新增会员</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'战略\' kind=\'strategy\'><i class=\'layui-icon layui-icon-refresh\'></i>重置战略卡片</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'组织\' kind=\'plan\'><i class=\'layui-icon layui-icon-refresh\'></i>重置组织卡片</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'费用\' kind=\'fee\'><i class=\'layui-icon layui-icon-refresh\'></i>重置费用卡片</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'销售\' kind=\'sale\'><i class=\'layui-icon layui-icon-refresh\'></i>重置销售卡片</a>&nbsp;&nbsp;<a class=\'renewcard\' href=\'javascript:void(0);\' url=\'{{url('refee')}}\' data=\'采购\' kind=\'purchase\'><i class=\'layui-icon layui-icon-refresh\'></i>重置销售卡片</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
@@ -148,7 +148,7 @@
                             location.reload();
                         }
                     });
-              }
+                }
                 });
                 }
               );
