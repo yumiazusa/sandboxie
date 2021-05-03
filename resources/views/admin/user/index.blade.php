@@ -147,14 +147,17 @@
               );
             },function(){
                 var kind = "plan";
-                recard(kind);
-            }
+                recard(kind,url);
+            },
 
             );
          });
 
-         function recard(kind){
-            $.ajax({
+         function recard(kind,url){
+            layer.confirm('确定重置？', {
+                btn: ['确定','取消'] },
+                function(){
+                  $.ajax({
                   type : "POST",
                   dataType:"json",
                   url : url,
@@ -180,6 +183,8 @@
                     });
               }
                 });
+                }
+              );
             }
     </script>
 @endsection
