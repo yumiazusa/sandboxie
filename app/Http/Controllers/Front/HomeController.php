@@ -2334,7 +2334,15 @@ class HomeController extends BaseController
                 "cid"=>"30",
                 "kind"=>"function",
                 "name"=>"职责中心",
-                "top"=> 69.05,
+                "top"=> 66.05,
+                "left"=> 29,
+            ),
+            31 =>array
+            (
+                "cid"=>"31",
+                "kind"=>"function",
+                "name"=>"降低财务成本",
+                "top"=> 72.05,
                 "left"=> 29,
             ),
             'content' =>array

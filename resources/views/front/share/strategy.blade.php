@@ -39,7 +39,9 @@
              <td>
       <input type="text" id="title" name="title" placeholder="输入共享服务中心名称" autocomplete="off" class="layui-input" value="{{$content['name']}}">
              </td>
-              <td rowspan="3">服务中心<br>建设模式</td>
+              <td rowspan="3"><div id="location2">服务中心<br>建设模式</div>
+              <table class="layui-table table5"><tr><td id="td1">短期试点</td></tr><tr><td id="td2">长期规划</td></tr></table>
+              </td>
           </tr>
            <tr>
             <td id="tdms2">服务对象</td>
