@@ -109,23 +109,12 @@
         });
         }
          $('.renewcard').click(function(){
-            var url = $(this).attr('url');
-             layer.confirm('选择要重置的卡片？', {
-             btn: ['战略卡片','组织卡片','费用卡片','销售卡片','采购卡片','取消重置'] //按钮
+             var kind = '战略';
+             var url = $(this).attr('url');
+             layer.confirm('确定重置'+kind+'卡片？', {
+             btn: ['重置'+kind+'卡片','取消重置'] //按钮
             }, function(){
                 var kind = "strategy";
-                recard(kind,url);
-            },function(){
-                var kind = "plan";
-                recard(kind,url);
-            },function(){
-                var kind = "fee";
-                recard(kind,url);
-            },function(){
-                var kind = "sale";
-                recard(kind,url);
-            },function(){
-                var kind = "purchase";
                 recard(kind,url);
             }
             );
