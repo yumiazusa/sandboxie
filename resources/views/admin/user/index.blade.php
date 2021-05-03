@@ -113,43 +113,21 @@
              layer.confirm('选择要重置的卡片？', {
              btn: ['战略卡片','组织卡片','费用卡片','销售卡片','采购卡片','取消重置'] //按钮
             }, function(){
-                layer.confirm('确定重置？', {
-                btn: ['确定','取消'] },
-                function(){
-                  var kind = "strategy";
-                  $.ajax({
-                  type : "POST",
-                  dataType:"json",
-                  url : url,
-                  data: {'kind':kind},
-                  beforeSend: function(){
-                  layer.msg('正在重置中');
-                   },
-                 //请求成功
-                success : function(result) {
-                layer.close();
-                layer.msg(result.msg, {icon: result.code}, function () {
-                        if (result.reload) {
-                            location.reload();
-                        }
-                    });
-                   },
-                 //请求失败，包含具体的错误信息
-                error : function(e){
-                layer.msg(e.msg, {icon: e.code}, function () {
-                        if (e.reload) {
-                            location.reload();
-                        }
-                    });
-              }
-                });
-                }
-              );
+                var kind = "strategy";
+                recard(kind,url);
             },function(){
                 var kind = "plan";
                 recard(kind,url);
-            },
-
+            },function(){
+                var kind = "fee";
+                recard(kind,url);
+            },function(){
+                var kind = "sale";
+                recard(kind,url);
+            },function(){
+                var kind = "purchase";
+                recard(kind,url);
+            }
             );
          });
 
