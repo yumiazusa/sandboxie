@@ -146,10 +146,40 @@
                 }
               );
             },function(){
-                alert('ok2');
+                var kind = "plan";
+                recard(kind);
             }
 
             );
          });
+
+         function recard(kind){
+            $.ajax({
+                  type : "POST",
+                  dataType:"json",
+                  url : url,
+                  data: {'kind':kind},
+                  beforeSend: function(){
+                  layer.msg('正在重置中');
+                   },
+                 //请求成功
+                success : function(result) {
+                layer.close();
+                layer.msg(result.msg, {icon: result.code}, function () {
+                        if (result.reload) {
+                            location.reload();
+                        }
+                    });
+                   },
+                 //请求失败，包含具体的错误信息
+                error : function(e){
+                layer.msg(e.msg, {icon: e.code}, function () {
+                        if (e.reload) {
+                            location.reload();
+                        }
+                    });
+              }
+                });
+            }
     </script>
 @endsection
