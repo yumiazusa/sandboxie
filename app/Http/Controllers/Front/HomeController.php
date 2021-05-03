@@ -324,6 +324,13 @@ class HomeController extends BaseController
 
     //重置所有卡片
     public function reFee(Request $request){
+        if(!$request['kind']){
+             return [
+                'code' => 2,
+                'msg' => '没有权限',
+                'reload' => true
+            ];
+        }
         if($request['kind'] === 'strategy'){
             $data=$this->strategyArray();
             $data=serialize($data);
@@ -337,9 +344,59 @@ class HomeController extends BaseController
              ];
             $res = DB::table('card4')->where('id',$v)->update($card);
              }
+        }elseif($request['kind'] === 'plan'){
+            $data=$this->planArray();
+            $data=serialize($data);
+            $user=DB::table('card5')->pluck('id');
+            foreach ($user as $k => $v) {
+            $card=[
+            'carddata' => $data,
+            // 'cardposition' => serialize($cardposition),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+             ];
+            $res = DB::table('card5')->where('id',$v)->update($card);
+             }
+        }elseif($request['kind'] === 'fee'){
+            $data=$this->feeArray();
+            $data=serialize($data);
+            $user=DB::table('card1')->pluck('id');
+            foreach ($user as $k => $v) {
+            $card=[
+            'carddata' => $data,
+            // 'cardposition' => serialize($cardposition),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+             ];
+            $res = DB::table('card1')->where('id',$v)->update($card);
+             }
+        }elseif($request['kind'] === 'sale'){
+            $data=$this->saleArray();
+            $data=serialize($data);
+            $user=DB::table('card2')->pluck('id');
+            foreach ($user as $k => $v) {
+            $card=[
+            'carddata' => $data,
+            // 'cardposition' => serialize($cardposition),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+             ];
+            $res = DB::table('card2')->where('id',$v)->update($card);
+             }
+        }elseif($request['kind'] === 'purchase'){
+            $data=$this->purchaseArray();
+            $data=serialize($data);
+            $user=DB::table('card3')->pluck('id');
+            foreach ($user as $k => $v) {
+            $card=[
+            'carddata' => $data,
+            // 'cardposition' => serialize($cardposition),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+             ];
+            $res = DB::table('card3')->where('id',$v)->update($card);
+             }
         }
-
-
         // $data=$this->strategyArray();
         // $data=serialize($data);
         // $user=DB::table('card4')->pluck('id');
@@ -355,13 +412,13 @@ class HomeController extends BaseController
         if(!$res){
             return [
                 'code' => 2,
-                'msg' => '刷新失败',
+                'msg' => '重置失败',
                 'reload' => true
             ];
          }
          return [
                 'code' => 1,
-                'msg' => '刷新成功',
+                'msg' => '重置成功',
                 'reload' => true
             ];
     }
