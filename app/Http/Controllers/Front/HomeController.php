@@ -1380,7 +1380,18 @@ class HomeController extends BaseController
                 "left"=> 14.53,
                 "shared" => 0
             ),
-             52 =>array("sharetb"=> 1)
+            52 =>array
+            (
+                "cid"=>"52",
+                "kind"=>"list",
+                "name"=>"收款回单",
+                "isshare"=> 1,
+                "sharename"=>"电子收款回单",
+                "top"=> 53.50,
+                "left"=> 15.53,
+                "shared" => 1
+            ),
+             53 =>array("sharetb"=> 1)
         );
         return $carddata;
     }
