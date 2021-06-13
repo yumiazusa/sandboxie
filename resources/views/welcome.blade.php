@@ -115,7 +115,9 @@
                     @endif
                 </div>
                 <div class="m-b-md">
-                   本沙盘功能仅供经管院财务共享综合实验教学使用，咨询Email：yumiazusa@hotmail.com
+                   <p>本沙盘功能仅供经管院财务共享综合实验教学使用，咨询Email：yumiazusa@hotmail.com</p>
+                   <p>版权所有：yumiazusa   备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-1   </a></a>
+                   建议您使用谷歌Chrome、Firefox浏览器浏览本网站</p>
                 </div>
             </div>
             <script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script> 
