@@ -2108,9 +2108,9 @@ class HomeController extends BaseController
             (
                 "cid"=>"60",
                 "kind"=>"list",
-                "name"=>"实物应收单",
+                "name"=>"实物应付单",
                 "isshare"=> 1,
-                "sharename"=>"电子应收单",
+                "sharename"=>"电子应付单",
                  "top"=> 53.50,
                 "left"=> 15.33,
                 "shared" => 1
