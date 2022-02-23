@@ -72,7 +72,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   财务共享服务中心<br>沙盘模拟系统
+                   财务共享服务中心v3<br>沙盘模拟系统
                 </div>
                 <!-- <div class="m-b-md">
                     @foreach($entities as $entity)
