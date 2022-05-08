@@ -45,4 +45,8 @@ class Log
         }
         return $next($request);
     }
+
+    public function lala(){
+        
+    }
 }

@@ -13,4 +13,4 @@ yarn-error.log
 /.phpintel
 /public/upload/
 /composer.lock
-/Http/Middleware/Log.php
+/App/Http/Middleware/Log.php
