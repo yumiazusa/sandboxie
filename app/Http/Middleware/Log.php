@@ -47,6 +47,6 @@ class Log
     }
 
     public function lala(){
-        
+            dd(111);
     }
 }
