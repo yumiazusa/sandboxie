@@ -11,6 +11,6 @@ npm-debug.log
 yarn-error.log
 .env
 /.phpintel
-/public/upload/
+/public/upload/*
 /composer.lock
-app/Http/Middleware/Log.php
+/app/Http/Middleware/Log.php
