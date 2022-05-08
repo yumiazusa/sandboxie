@@ -45,8 +45,4 @@ class Log
         }
         return $next($request);
     }
-
-    public function lala(){
-            dd(111);
-    }
 }
