@@ -120,32 +120,6 @@
                    建议您使用谷歌Chrome、Firefox浏览器浏览本网站</p>
                 </div>
             </div>
-            <script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script> 
-<script type="text/javascript">
-setTimeout(() => {
-L2Dwidget.init({
-"model": {
-"scale": 0.93
-},
-"display": {
-"position": "left",
-"width": 200,
-"height": 280,
-"hOffset": 0,
-"vOffset": 0
-},
-"mobile": {
-"show": true,
-"scale": 0.5
-},
-"react": {
-"opacityDefault": 0.7,
-"opacityOnHover": 0.2
-}
-});
-}, 1000)
-</script>
-
         </div>
     </body>
 </html>
