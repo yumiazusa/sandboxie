@@ -78,7 +78,6 @@ class UserController extends Controller
         return view('admin.user.addexcl', ['breadcrumb' => $this->breadcrumb]);
     }
 
-
         //上传文件
     // public function addex(Request $request)
     // {
