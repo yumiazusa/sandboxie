@@ -78,6 +78,74 @@ class UserController extends Controller
         return view('admin.user.addexcl', ['breadcrumb' => $this->breadcrumb]);
     }
 
+    public function liuyuan()
+    {
+        $this->breadcrumb[] = ['title' => '柳渊的数据', 'url' => ''];
+        DB::connection()->enableQueryLog();
+        $res = DB::table('sheet1')->get();
+        // $res = DB::table('sheet1')->limit(100)->get();
+        // $res = DB::table('sheet1')->where('id',4)->count();
+        // dump(DB::getQueryLog());
+        // dd($res);
+        $list = [];
+        foreach($res as $k => $v){
+            $list[$v->Stkcd]['Stkcd'] = $v->Stkcd;
+            $list[$v->Stkcd]['Stknme'] = $v->Stknme;
+            $list[$v->Stkcd]['list'][$v->year][$v->ItemNo] = $v->Classification;
+        }
+        // dd($list);
+        $diff = [];
+        foreach($list as $k => $v){
+            $size = sizeof($v['list']);
+            $first = array_key_first($v['list']);
+            for($i = $first; $i < $first+$size; $i++) {
+                if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
+                    $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
+                    dump($res);
+                }else{
+                    continue;
+                }
+            }
+        }
+
+        return view('admin.user.liuyuan', ['breadcrumb' => $this->breadcrumb]);
+
+    }
+
+    public function compare($arr1, $arr2,$year){
+        if(is_array($arr1) && is_array($arr2) ){     
+            $res =  array_diff($arr1,$arr2);
+            $size1= sizeof($arr1);
+            $size2= sizeof($arr2);
+            if(!$res){
+                if($size1 < $size2){
+                    $rs =  array_diff($arr2,$arr1);
+                    return [
+                            'code' => 1,
+                            'msg' => "较".$year."年有精简,简化了:".implode("，",$rs),
+                            ];
+                }elseif($size1 = $size2){
+                    return [
+                        'code' => 0,
+                        'msg' => "较".$year."年没改变",
+                        ];
+                }
+            }else{
+                return [
+                    'code' => 2,
+                    'msg' => "较".$year."年有改变,改变项为:".implode("，",$res),
+                    ]; 
+            }
+        }else{
+            return [
+                'code' => 3,
+                'msg' => "有错误，请检查",
+                ];
+        }
+    }
+  
+  
+
         //上传文件
     // public function addex(Request $request)
     // {
