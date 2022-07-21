@@ -82,8 +82,8 @@ class UserController extends Controller
     {
         $this->breadcrumb[] = ['title' => '柳渊的数据', 'url' => ''];
         DB::connection()->enableQueryLog();
-        $res = DB::table('sheet1')->get();
-        // $res = DB::table('sheet1')->limit(100)->get();
+        // $res = DB::table('sheet1')->get();
+        $res = DB::table('sheet1')->limit(5000)->get();
         // $res = DB::table('sheet1')->where('id',4)->count();
         // dump(DB::getQueryLog());
         // dd($res);
@@ -94,23 +94,56 @@ class UserController extends Controller
             $list[$v->Stkcd]['list'][$v->year][$v->ItemNo] = $v->Classification;
         }
         // dd($list);
-        $diff = [];
-        foreach($list as $k => $v){
-            $size = sizeof($v['list']);
-            $first = array_key_first($v['list']);
+        $diff = array_map(function($arr){
+            $size = sizeof($arr['list']);
+            $first = array_key_first($arr['list']);
             for($i = $first; $i < $first+$size; $i++) {
-                if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
-                    $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
-                    dump($res);
-                }else{
-                    continue;
-                }
-            }
-        }
-
+                        if(isset($arr['list'][$i]) && isset($arr['list'][$i-1])){
+                            $res =$this->compare($arr['list'][$i],$arr['list'][$i-1],$i-1);
+                            dump($res);
+                        }else{
+                            continue;
+                        }
+                    }
+        },$list);
+        // foreach($list as $k => $v){
+        //     $size = sizeof($v['list']);
+        //     $first = array_key_first($v['list']);
+        //     $tempArr = array();
+        //     for($i = $first; $i < $first+$size; $i++) {
+        //         $tempArr[$i] = $i;
+        //         if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
+        //             $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
+        //             dump($res);
+        //         }else{
+        //             continue;
+        //         }
+        //     }
+        //     unset($tempArr);
+        // }
+        
         return view('admin.user.liuyuan', ['breadcrumb' => $this->breadcrumb]);
 
     }
+
+    // public function arrMap($arr){
+    //     dump($arr['list']);
+        // foreach($list as $k => $v){
+        //     $size = sizeof($v['list']);
+        //     $first = array_key_first($v['list']);
+        //     $tempArr = array();
+        //     for($i = $first; $i < $first+$size; $i++) {
+        //         $tempArr[$i] = $i;
+        //         if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
+        //             $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
+        //             dump($res);
+        //         }else{
+        //             continue;
+        //         }
+        //     }
+        //     unset($tempArr);
+        // }
+    // }
 
     public function compare($arr1, $arr2,$year){
         if(is_array($arr1) && is_array($arr2) ){     
