@@ -19,6 +19,7 @@ use App\Imports\AdminsImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Front\HomeController;
+use App\Exports\UserExport;   
 
 class UserController extends Controller
 {
@@ -82,68 +83,62 @@ class UserController extends Controller
     {
         $this->breadcrumb[] = ['title' => '柳渊的数据', 'url' => ''];
         DB::connection()->enableQueryLog();
-        // $res = DB::table('sheet1')->get();
-        $res = DB::table('sheet1')->limit(5000)->get();
-        // $res = DB::table('sheet1')->where('id',4)->count();
+        $res = DB::table('sheet1')->get();
         // dump(DB::getQueryLog());
-        // dd($res);
         $list = [];
         foreach($res as $k => $v){
             $list[$v->Stkcd]['Stkcd'] = $v->Stkcd;
             $list[$v->Stkcd]['Stknme'] = $v->Stknme;
             $list[$v->Stkcd]['list'][$v->year][$v->ItemNo] = $v->Classification;
         }
-        // dd($list);
-        $diff = array_map(function($arr){
-            $size = sizeof($arr['list']);
-            $first = array_key_first($arr['list']);
+        $tempArr = array();
+        foreach($list as $k => $v){
+            $size = sizeof($v['list']);
+            $first = array_key_first($v['list']);
             for($i = $first; $i < $first+$size; $i++) {
-                        if(isset($arr['list'][$i]) && isset($arr['list'][$i-1])){
-                            $res =$this->compare($arr['list'][$i],$arr['list'][$i-1],$i-1);
-                            dump($res);
-                        }else{
-                            continue;
-                        }
-                    }
-        },$list);
-        // foreach($list as $k => $v){
-        //     $size = sizeof($v['list']);
-        //     $first = array_key_first($v['list']);
-        //     $tempArr = array();
-        //     for($i = $first; $i < $first+$size; $i++) {
-        //         $tempArr[$i] = $i;
-        //         if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
-        //             $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
-        //             dump($res);
-        //         }else{
-        //             continue;
-        //         }
-        //     }
-        //     unset($tempArr);
-        // }
+                if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
+                    $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
+                    $res['Stkcd'] = $v['Stkcd'];
+                    $res['Stknme'] = $v['Stknme'];
+                    $res['year'] = $i;
+                    $tempArr[]= $res;
+                }else{
+                    continue;
+                }
+            }
+        }
+        $row = [[
+            "Stkcd"=>'证券代码',
+            "stknme"=>'证券简称',
+            "Accper"=>'会计截止日期',
+            "infoNo"=>'状态码',
+            "info"=>'状态'
+        ]];
+
+        $data = array();
+        foreach($tempArr as $k=>$v){
+            $data[$k]['Stkcd'] = str_pad($v['Stkcd'],6,'0',STR_PAD_LEFT);
+            $data[$k]['Stknme'] = $v['Stknme'];
+            $data[$k]['Accper'] = $v['year'];
+            $data[$k]['infoNo'] = $v['code'];
+            $data[$k]['info'] = $v['msg'];
+        }
         
+        $header = $row;//导出表头
+        $excel = new UserExport($data, $header,'导出sheetName');
+        $excel->setColumnWidth(['A'=>15, 'B' => 20, 'C' => 20,'D' => 15, 'E' => 40]);
+        $excel->setRowHeight([1 => 40]);
+        $excel->setFont(['A1:Z1265' => '宋体']);
+        $excel->setFontSize(['A1:I1' => 14,'A2:Z1265' => 10]);
+        $excel->setBold(['A1:E1' => true]);
+        $excel->setBackground(['A1:E1' => '808080']);
+        // $excel->setMergeCells(['A1:E1']);
+        $excel->setBorders(['A1:E5' => '#000000']);
+        return Excel::download($excel, '导出文件.xlsx');
+
         return view('admin.user.liuyuan', ['breadcrumb' => $this->breadcrumb]);
 
     }
-
-    // public function arrMap($arr){
-    //     dump($arr['list']);
-        // foreach($list as $k => $v){
-        //     $size = sizeof($v['list']);
-        //     $first = array_key_first($v['list']);
-        //     $tempArr = array();
-        //     for($i = $first; $i < $first+$size; $i++) {
-        //         $tempArr[$i] = $i;
-        //         if(isset($v['list'][$i]) && isset($v['list'][$i-1])){
-        //             $res =$this->compare($v['list'][$i],$v['list'][$i-1],$i-1);
-        //             dump($res);
-        //         }else{
-        //             continue;
-        //         }
-        //     }
-        //     unset($tempArr);
-        // }
-    // }
 
     public function compare($arr1, $arr2,$year){
         if(is_array($arr1) && is_array($arr2) ){     
@@ -159,7 +154,7 @@ class UserController extends Controller
                             ];
                 }elseif($size1 = $size2){
                     return [
-                        'code' => 0,
+                        'code' => 3,
                         'msg' => "较".$year."年没改变",
                         ];
                 }
@@ -171,7 +166,7 @@ class UserController extends Controller
             }
         }else{
             return [
-                'code' => 3,
+                'code' => 4,
                 'msg' => "有错误，请检查",
                 ];
         }
