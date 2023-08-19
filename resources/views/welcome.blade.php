@@ -116,8 +116,11 @@
                 </div>
                 <div class="m-b-md">
                    <p>本沙盘功能仅供经管院财务共享综合实验教学使用，咨询Email：yumiazusa@hotmail.com</p>
-                   <p>版权所有：yumiazusa   备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-1   </a></a>
-                   建议您使用谷歌Chrome、Firefox浏览器浏览本网站</p>
+                   <p>版权所有：yumiazusa   备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-1;</a>
+                
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53011402000635" ><img src="/upload/image/beian.png">滇公网安备 53011402000635号</a>
+		 	建议您使用谷歌Chrome、Firefox浏览器浏览本网站
+                </p>
                 </div>
             </div>
         </div>
