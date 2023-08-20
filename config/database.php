@@ -52,12 +52,13 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-            'modes' => [
-                'STRICT_ALL_TABLES',
-                'ERROR_FOR_DIVISION_BY_ZERO',
-                'NO_ZERO_DATE',
+            'modes'  => [ //加这一配置
+                'ONLY_FULL_GROUP_BY', //groupby会出错
+                'STRICT_TRANS_TABLES',
                 'NO_ZERO_IN_DATE',
-                'NO_AUTO_CREATE_USER',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_ENGINE_SUBSTITUTION',
             ],
         ],
 
