@@ -91,6 +91,7 @@
 @endforeach
 
     </div>
+    <script src="http://fast.cgshiyan.com/js/iframe.js" id="fastgpt-iframe" data-src="http://fast.cgshiyan.com/chat/share?shareId=tpaqvptxakgvy28g9saj4oic" data-color="#4e83fd"></script>
 <script>
 
          $(function(){
