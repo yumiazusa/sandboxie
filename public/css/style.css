@@ -104,7 +104,7 @@ html, body { height: 100%; }
 }
 /*卡片名称*/
 .card1 >p{
-	font-size: 20%;
+	font-size: 85%;
 	color: #374b54;
 }
 
@@ -122,7 +122,7 @@ html, body { height: 100%; }
 }
 /*卡片名称*/
 .card2 >p{
-	font-size: 20%;
+	font-size: 85%;
 	color: #374b54;
 }
 
@@ -147,7 +147,7 @@ html, body { height: 100%; }
 	position: relative;
 	left: 56px;
 	top:-91px;
-	font-size: 5%;
+	font-size: 100%;
 	color: white;
 }
 
