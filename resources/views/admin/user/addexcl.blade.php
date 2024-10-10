@@ -118,7 +118,7 @@
         var host = location.host;
 
         //把excel发送出来
-        var url = "http://"+ host +"/admin/users/download";
+        var url = "https://"+ host +"/admin/users/download";
         window.open(url);
     };
     </script>
